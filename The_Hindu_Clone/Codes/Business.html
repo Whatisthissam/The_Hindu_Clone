@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #fff;
+        }
+
+        /* head and nav wala part */
+        .main-header {
+            height: 175px;
+            margin: 0;
+        }
+
+        .header-middle {
+            width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin: 0;
+        }
+
+        .header-middle,
+        span {
+            color: #000;
+            margin-top: 130px;
+        }
+
+        .epaper-link,
+        .span1 {
+            color: #d9232d;
+            margin-top: 130px;
+        }
+
+        .header-middle,
+        .span1 {
+            color: #d9232d;
+            margin-top: 140px;
+        }
+
+        .header-middle {
+            margin-top: 0%;
+            color: #d9232d;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .logo {
+            width: 500px;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .subscribe-btn {
+            background-color: #d9232d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.5rem 1rem;
+            background: #ffffff;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 500;
+            color: black;
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #333;
+            background: transparent;
+            padding: 0.25rem 0.5rem;
+        }
+
+        .search-box input::placeholder {
+            color: #aaa;
+            font-weight: 400;
+        }
+
+        .search-box button {
+            background: none;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: 500;
+            color: #333;
+            padding: 0;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            margin: 0 auto;
+            margin-left: 5%;
+            padding: 0;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .nav-links a:hover {
+            color: #0077cc;
+        }
+
+        .th-premium-link span {
+            background-color: #f7b731;
+            color: #333;
+            border-radius: 50%;
+            padding: 6px 6px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            font-size: 13px;
+            color: #555;
+        }
+
+        .top-bar a {
+            color: #d32f2f;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+
+        }
+
+        .header-left,
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 40px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .subscribe-button {
+            background-color: #b91c1c;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .premium-link {
+            background-color: #ffc20e;
+            color: #000;
+            padding: 4px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .main-nav {
+            margin-left: 100px;
+            padding: 10px 0;
+        }
+
+        .main-nav ul {
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        /* head and nav end wala part */
+
+
+
+
+        /* 1 */
+        /* --- BUSINESS PAGE SECTION --- */
+        .business-top-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            padding-bottom: 30px;
+        }
+
+        .business-list-item {
+            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+        }
+
+        .business-list-item img {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .business-article-title-small {
+            font-family: 'Georgia', serif;
+            font-size: 17px;
+            font-weight: bold;
+            line-height: 1.4;
+            color: #000;
+            margin: 5px 0 10px 0;
+        }
+
+        .business-featured-story {
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .business-featured-title-large {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 26px;
+            line-height: 1.2;
+            margin: 0 0 20px 0;
+        }
+
+        .business-featured-inner-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 20px;
+        }
+
+        .business-featured-inner-grid img {
+            width: 100%;
+        }
+
+        .business-featured-summary p {
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .business-featured-bottom-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .business-featured-bottom-grid img {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        /* Reusing sub-section-title-container, grid-card, text-stack-column, etc */
+        .markets-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            align-items: start;
+        }
+
+        /* Reusing see-more-link and see-more-link-container */
+
+
+
+        /* 2 */
+        /* --- ECONOMY & MORE BUSINESS STORIES SECTION --- */
+        .economy-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1.5fr 1fr;
+            gap: 25px;
+            align-items: start;
+        }
+
+        .economy-right-stack .placeholder-image {
+            width: 100%;
+            height: 140px;
+            background-color: #f0f0f0;
+            margin-bottom: 10px;
+            border: 1px solid #e0e0e0;
+        }
+
+        /* Reusing previously defined styles like:
+   .sub-section-title-container, .grid-card, .text-stack-column, .grid-card-title,
+   .see-more-link-container, and .see-more-link
+*/
+
+        .more-business-grid {
+            display: grid;
+            grid-template-columns: 2fr 1.1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .more-business-story-item {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            padding-bottom: 18px;
+            margin-bottom: 18px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .more-business-story-item img {
+            width: 140px;
+            height: 90px;
+            object-fit: cover;
+        }
+
+        /* This class creates a gray box for missing images */
+        .placeholder-image-small {
+            width: 140px;
+            height: 90px;
+            flex-shrink: 0;
+            background-color: #f0f0f0;
+            border: 1px solid #e0e0e0;
+        }
+
+        .more-business-story-item h3 {
+            font-family: 'Georgia', serif;
+            font-size: 19px;
+            font-weight: bold;
+            line-height: 1.4;
+            color: #000;
+            margin: 0 0 8px 0;
+        }
+
+        /* Also reuses: .section-heading-small, .article-author, and the .latest-news-sidebar styles. */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* ============================================= */
+        /* 5. FOOTER                                     */
+        /* ============================================= */
+        .site-footer {
+            margin-top: 300px;
+            background-color: #f7f7f7;
+            padding: 40px 5%;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer-top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .footer-logo img {
+            max-height: 40px;
+        }
+
+        .app-store-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .app-store-buttons img {
+            height: 40px;
+        }
+
+        .footer-sitemap-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 30px;
+        }
+
+        .sitemap-column h4 {
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin: 0 0 20px 0;
+            padding-top: 15px;
+            border-top: 2px solid #333;
+        }
+
+        .sitemap-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 40px 0;
+        }
+
+        .sitemap-column li {
+            margin-bottom: 12px;
+        }
+
+        .sitemap-column a {
+            text-decoration: none;
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        .sitemap-column a:hover {
+            text-decoration: underline;
+        }
+
+        .latest-news-grid {
+            grid-column: span 2;
+        }
+
+        .latest-news-grid ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .latest-news-grid li {
+            font-size: 0.85rem;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 15px;
+        }
+
+        .footer-bottom-bar {
+            border-top: 1px solid #e0e0e0;
+            padding-top: 30px;
+            margin-top: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: left;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+
+        .social-links a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 35px;
+            height: 35px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .legal-links {
+            text-align: left;
+            margin-bottom: 20px;
+            font-size: 0.8rem;
+        }
+
+        .legal-links a {
+            color: #555;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .copyright-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #555;
+        }
+
+        #backToTopBtn {
+            color: #555;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- This container centers the top part of the website -->
+    <div class="container">
+        <!-- ===== TOP HEADER SECTION ===== -->
+        <header class="main-header">
+            <div class="header-top">
+            </div>
+            <div class="header-middle">
+                <span>June 11, 2025</span>
+                <a href="https://epaper.thehindu.com/reader?utm_source=Hindu&utm_medium=Menu&utm_campaign=Header&_gl=1*1u4uvwa*_gcl_au*NDk4ODM2Nzc2LjE3MjUwNzc4OTIuNTIxNjMwNzI4LjE3MjU0NDM0NDkuMTcyNTQ0MzQ0OQ.."
+                    class="epaper-link">
+                    <span class="span1">e-Paper</span>
+                </a>
+                <div class="logo">
+                    <img src="../Assets/thehindu-logo.svg" class="lazy-img" alt="THE HINDU Logo" />
+                </div>
+                <div class="header-actions">
+                    <a href="../Codes/login.html" class="login-link">LOGIN</a>
+                    <a href="../Codes/subscription.html">
+                        <button class="subscribe-btn">SUBSCRIBE</button>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- ===== NAVIGATION BAR ===== -->
+        <nav class="main-nav" role="navigation">
+            <!-- Left: Search -->
+            <div class="search-box">
+                <input type="text" id="nav-search" placeholder="☰ Search" aria-label="Search sections" />
+                <button id="search-btn" aria-label="Run search"></button>
+            </div>
+
+
+            <!-- Center: nav links -->
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../Codes/india.html">India</a></li>
+                <li><a href="../Codes/world.html">World</a></li>
+                <li><a href="../Codes/movie.html">Movies</a></li>
+                <li><a href="../codes/sports.html">Sport</a></li>
+                <li><a href="../Codes/data.html">Data</a></li>
+                <li><a href="../Codes/health.html">Health</a></li>
+                <li><a href="../Codes/Opinion.html">Opinion</a></li>
+                <li><a href="../Codes/Science.html">Science</a></li>
+                <li><a href="../Codes/Business.html">Business</a></li>
+                <li><a href="../Codes/subscription.html" class="th-premium-link"><span>TH</span> Premium</a></li>
+            </ul>
+        </nav>
+
+
+
+
+
+        <!-- 1 -->
+        <!-- BUSINESS PAGE SECTION START -->
+        <section class="business-page-wrapper" style="margin-top: 20px; ">
+
+            <!-- Main Title & Nav -->
+            <h1 class="page-title"
+                style="text-align: center; color: brown; font-family: Georgia, 'Times New Roman', Times, serif; margin-top: 0%; margin-bottom: 50px;">
+                Business
+            </h1>
+            <div class="page-title-container">
+            </div>
+
+            <!-- Top Grid Section -->
+            <div class="business-top-grid">
+                <aside class="business-left-column">
+                    <article class="business-list-item">
+                        <p class="article-category" style="color: brown;">BUSINESS</p>
+                        <h3 class="business-article-title-small">‘Air India plane crash likely to lead to hardening of
+                            aviation insurance market’</h3>
+                        <p class="article-author">LALATENDU MISHRA</p>
+                    </article>
+                    <article class="business-list-item">
+                        <p class="article-category" style="color: brown;">WORLD</p>
+                        <h3 class="business-article-title-small">World Bank, IFC approve $700 million loan for
+                            Pakistan’s Reko Diq project</h3>
+                        <p class="article-author">PTI</p>
+                    </article>
+                    <article class="business-list-item">
+                        <p class="article-category" style="color: brown;">BUSINESS</p>
+                        <h3 class="business-article-title-small">Oil soars more than 9% after Israel strikes Iran,
+                            rattling investors</h3>
+                        <p class="article-author">REUTERS</p>
+                    </article>
+                    <article class="business-list-item">
+                        <img src="../Assets/b1.jpg" alt="CEO of Scale AI">
+                        <p class="article-category" style="color: brown;">TECHNOLOGY</p>
+                        <h3 class="business-article-title-small">Meta invests $14.3 billion in AI firm Scale and
+                            recruits its CEO for ‘superintelligence’ team</h3>
+                        <p class="article-author">AP</p>
+                    </article>
+                </aside>
+
+                <div class="business-right-column">
+                    <article class="business-featured-story">
+                        <h2 class="business-featured-title-large">Stock markets tumble nearly 1% on rising geopolitical
+                            tensions, boiling crude oil prices</h2>
+                        <div class="business-featured-inner-grid">
+                            <img src="../Assets/b2.jpg" alt="Bombay Stock Exchange building">
+                            <div class="business-featured-summary">
+                                <p
+                                    style="font-family: 'Times New Roman', Times, serif; font-weight: bold; font-size: 15px; margin-top: 0%;">
+                                    Equity indices plummeted due to global market weakness, Brent crude spike, and
+                                    geopolitical tensions, impacting investor sentiment negatively</p>
+                                <p class="article-author">PTI</p>
+                            </div>
+                        </div>
+                    </article>
+                    <div class="business-featured-bottom-grid">
+                        <article>
+                            <p class="article-category" style="color: brown;">MARKETS</p>
+                            <h3 class="business-article-title-small">Rupee dives 55 paise to close at 86.07 against U.S.
+                                dollar</h3>
+                            <p class="article-author" style="color: brown;">PTI</p>
+                            <p class="article-category" style="margin-top:15px;">INDUSTRY</p>
+                            <h3 class="business-article-title-small">Ivory Coast workers say Unilever is violating their
+                                union rights amid share sale, documents show</h3>
+                        </article>
+                        <article>
+                            <h3 class="business-article-title-small">European airline stocks tumble after Israel strikes
+                                on Iran</h3>
+                            <img src="../Assets/b3.jpg" alt="Lufthansa planes on tarmac">
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Markets Section -->
+            <section class="markets-section" style="margin-top: 20px;">
+                <h1 class="page-title"
+                    style="text-align: center; color: brown; font-family: Georgia, 'Times New Roman', Times, serif; margin-top: 5%; margin-bottom: 70px; font-size: 30px;">
+                    Markets
+                </h1>
+                <div class="sub-section-title-container">
+                </div>
+                <div class="markets-grid">
+                    <article class="grid-card">
+                        <img src="../Assets/b4.jpg" alt="Stock market building">
+                        <h3 class="grid-card-title">Stock markets tumble nearly 1% on rising geopolitical tensions,
+                            boiling crude oil prices</h3>
+                        <p class="article-author">PTI</p>
+                    </article>
+                    <div class="text-stack-column">
+                        <article class="text-stack-item">
+                            <h3 class="grid-card-title">Rupee dives 55 paise to close at 86.07 against U.S. dollar</h3>
+                            <p class="article-author">PTI</p>
+                        </article>
+                        <article class="text-stack-item">
+                            <p class="article-category">MARKETS</p>
+                            <h3 class="grid-card-title">European airline stocks tumble after Israel strikes on Iran</h3>
+                            <p class="article-author">REUTERS</p>
+                        </article>
+                    </div>
+                    <article class="grid-card">
+                        <img src="../Assets/b5.jpg" alt="Hand holding Indian Rupee notes">
+                        <h3 class="grid-card-title">Rupee plummets 56 paise to 86.08 against U.S. dollar in early trade
+                        </h3>
+                        <p class="article-author">PTI</p>
+                    </article>
+                    <article class="grid-card">
+                        <img src="../Assets/b6.jpg" alt="Stock market building from another angle">
+                        <p class="article-category">MARKETS</p>
+                        <h3 class="grid-card-title">Midday trend: Indian stocks open low following Israel attack on Iran
+                            and recovers gradually inline with global bourses</h3>
+                    </article>
+                </div>
+            </section>
+
+        </section>
+        <!-- BUSINESS PAGE SECTION END -->
+
+
+
+
+
+
+
+
+        <!-- 2 -->
+
+        <!-- ECONOMY & MORE BUSINESS STORIES SECTION START -->
+        <section class="economy-section-wrapper" style="margin-top: 20px;">
+
+            <!-- Economy Section -->
+            <h1 class="page-title"
+                style="text-align: center; color: brown; font-family: Georgia, 'Times New Roman', Times, serif; margin-top: 8%; margin-bottom: 60px; font-size: 30px;">
+                Economy
+            </h1>
+            <div class="sub-section-title-container">
+            </div>
+            <div class="economy-grid">
+                <article class="grid-card">
+                    <img src="../Assets/b5.jpg" alt="Hand holding Indian Rupee notes">
+                    <h3 class="grid-card-title">Rupee plummets 56 paise to 86.08 against U.S. dollar in early trade</h3>
+                    <p class="article-author">PTI</p>
+                </article>
+
+                <div class="economy-text-stack">
+                    <article class="text-stack-item">
+                        <h3 class="grid-card-title">Midday trend: Indian stocks open low following Israel attack on Iran
+                            and recovers gradually inline with global bourses</h3>
+                        <p class="article-author">THE HINDU BUREAU</p>
+                    </article>
+                </div>
+
+                <div class="economy-right-stack">
+                    <article class="placeholder-article">
+                        <div class="placeholder-image"></div>
+                        <h3 class="grid-card-title">RBI allows BCs to update KYC information</h3>
+                        <p class="article-author">ASHOKAMITHRAN T.</p>
+                    </article>
+                    <article>
+                        <h3 class="grid-card-title" style="margin-top: 20px;">Indian stocks down 1% as U.S. says Israel
+                            may attack Iran</h3>
+                        <p class="article-author">ASHOKAMITHRAN T.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section class="more-business-stories-section-wrapper" style="margin-top: 50px; padding-top: 30px; ">
+            <div class="more-business-grid">
+                <div class="more-business-stories-column">
+                    <h1 class="page-title"
+                        style="text-align: left; color: brown; font-family: Georgia, 'Times New Roman', Times, serif; margin-top: 8%; margin-bottom: 60px; font-size: 20px;">
+                        More stories from Business
+                    </h1>
+
+                    <article class="more-business-story-item">
+                        <img src="../Assets/bms1.jpeg" alt="Oil refinery at sunset">
+                        <div class="story-text-content">
+                            <h3>India moves to conserve its rare earths, seeks halt to Japan exports</h3>
+                            <p class="article-author">Reuters</p>
+                        </div>
+                    </article>
+
+                    <article class="more-business-story-item">
+                        <img src="../Assets/bms2.jpg" alt="Oil refinery at sunset">
+                        <div class="story-text-content">
+                            <h3>Israel-Iran conflict to impact oil supply to India, increase export costs by 40-50%</h3>
+                            <p class="article-author">T.C.A. SHARAD RAGHAVAN</p>
+                        </div>
+                    </article>
+
+                    <article class="more-business-story-item">
+                        <img src="../Assets/bms3.jpeg" alt="Oil refinery at sunset">
+                        <div class="story-text-content">
+                            <h3>Apna.co unveils AI interview tool for job seekers</h3>
+                            <p class="article-author">The Hindu Bureau</p>
+                        </div>
+                    </article>
+
+                    <article class="more-business-story-item">
+                        <img src="../Assets/bms4.jpeg" alt="Oil refinery at sunset">
+                        <div class="story-text-content">
+                            <h3>LTV breather in RBI’s gold loan final directions a positive for NBFCs, says Crisil Ratings</h3>
+                            <p class="article-author">The Hindu Bureau</p>
+                        </div>
+                    </article>
+
+                    <article class="more-business-story-item">
+                        <img src="../Assets/bms5.jpg" alt="Oil refinery at sunset">
+                        <div class="story-text-content">
+                            <h3>Stock markets tumble nearly 1% on rising geopolitical tensions, boiling crude oil prices</h3>
+                            <p class="article-author">PTI</p>
+                        </div>
+                    </article>
+
+                    <article class="more-business-story-item">
+                        <img src="../Assets/bms6.jpeg" alt="Oil refinery at sunset">
+                        <div class="story-text-content">
+                            <h3>LIC to relax claims documentation of Air India crash victims</h3>
+                            <p class="article-author">The Hindu Bureau</p>
+                        </div>
+                    </article>
+
+                    <article class="more-business-story-item">
+                        <img src="../Assets/BMS8.jpg" alt="Oil refinery at sunset">
+                        <div class="story-text-content">
+                            <h3>Rupee dives 55 paise to close at 86.07 against U.S. dollar</h3>
+                            <p class="article-author">PTI</p>
+                        </div>
+                    </article>
+
+
+                </div>
+                <aside class="latest-news-sidebar">
+                    <h1 class="page-title"
+                        style="text-align: left; color: brown; font-family: Georgia, 'Times New Roman', Times, serif; margin-top: 12%; margin-bottom: 60px; font-size: 20px;">
+                        Latest News
+                    </h1>
+
+                    <ul class="timeline">
+                        <li class="timeline-item">
+                            <p class="timestamp">18 mins ago - Health</p>
+                            <p class="headline">SII, DNDi partner for expanding human trials for dengue treatment</p>
+                        </li>
+                        <li class="timeline-item">
+                            <p class="timestamp">18 mins ago - Maharashtra</p>
+                            <p class="headline">Patanjali Foods moves Bombay High Court over land encroachments in
+                                Raigad</p>
+                        </li>
+                        <li class="timeline-item">
+                            <p class="timestamp">33 mins ago - India</p>
+                            <p class="headline">Ahmedabad plane crash: Grim wait for kin as DNA samples hold hope of
+                                identifying loved ones</p>
+                        </li>
+                    </ul>
+                    <a href="#" class="read-more-link" style="text-decoration: none; font-size: 12px; margin-left: 40px; color: #000;">READ MORE STORIES</a> <!-- Reuses link style -->
+            </div>
+        </section>
+        <!-- ECONOMY & MORE BUSINESS STORIES SECTION END -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- START: Footer Section -->
+        <div class="outer-div">
+            <div class="cities-updates-section">
+                <footer class="site-footer">
+                    <div class="footer-top-bar">
+                        <div class="footer-logo">
+                            <img src="../Assets/thehindu-logo.svg" class="lazy-img" alt="The Hindu Logo">
+                        </div>
+                        <div class="app-store-buttons">
+                            <a href="#"><img src="../Assets/google-playstore-icon.svg" class="lazy-img"
+                                    alt="Google Play"></a>
+                            <a href="#"><img src="https://www.thehindu.com/theme/images/th-online/apple-store-icon.svg"
+                                    class="lazy-img" alt="Apple Store"></a>
+                        </div>
+                    </div>
+                    <div class="footer-sitemap-grid">
+                        <!-- ... Footer content columns ... -->
+                        <!-- Column 1: The Hindu -->
+                        <div class="sitemap-column">
+                            <h4>The Hindu</h4>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Code of Editorial Values</a></li>
+                                <li><a href="#">News Archive</a></li>
+                                <li><a href="bookmarks.html">Bookmarks <i class="fa-solid fa-bookmark"></i></a></li>
+                                <li><a href="#">Sitemap</a></li>
+                                <li><a href="#">Print Subscription</a></li>
+                                <li><a href="#">Digital Subscription</a></li>
+                                <li><a href="#">Subscribe to Newsletters</a></li>
+                                <li><a href="#">Rss Feeds</a></li>
+                                <li><a href="#">Readers Editor-Terms of Reference</a></li>
+                                <li><a href="#">Authors & Contributors</a></li>
+                                <li><a href="#">Gift Front page</a></li>
+
+                            </ul>
+                            <h4>Contact us</h4>
+                            <ul>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Social Media</a></li>
+                                <li><a href="#">Advertise With Us</a></li>
+
+                            </ul>
+
+                            <h4>Group News Sites</h4>
+                            <ul>
+                                <li><a href="#">Business Line</a></li>
+                                <li><a href="#">BL on Campus</a></li>
+                                <li><a href="#">Sportstar</a></li>
+                                <li><a href="#">Frontline</a></li>
+                                <li><a href="#">இந்து தமிழ் திசை</a></li>
+                                <li><a href="#">The Hindu Centre</a></li>
+                                <li><a href="#">Young World Club</a></li>
+                                <li><a href="#">The Hindu ePaper</a></li>
+                                <li><a href="#">Business Line ePaper</a></li>
+                                <li><a href="#">Crossword + Free Games</a></li>
+
+                            </ul>
+                        </div>
+
+                        <!-- Column 2: Other Products & Popular Sections -->
+                        <div class="sitemap-column">
+                            <h4>Other Products</h4>
+                            <ul>
+                                <li><a href="#">STEP</a></li>
+                                <li><a href="#">Images</a></li>
+                                <li><a href="#">Classifieds - Print</a></li>
+                                <li><a href="#">Bookstore & Special Publications</a></li>
+
+                            </ul>
+                            <h4>Popular Sections</h4>
+                            <ul>
+                                <li><a href="#">Elections</a></li>
+                                <li><a href="#">Latest News</a></li>
+                                <li><a href="#">National News</a></li>
+                                <li><a href="#">International News</a></li>
+                                <li><a href="#">Videos</a></li>
+                                <li><a href="#">Life & Style</a></li>
+                                <li><a href="#">Foods</a></li>
+                                <li><a href="#">Podcast</a></li>
+                                <li><a href="#">Showcase</a></li>
+
+                            </ul>
+
+                            <h4>Opinion</h4>
+                            <ul>
+                                <li><a href="#">Editorial</a></li>
+                                <li><a href="#">Columns</a></li>
+                                <li><a href="#">Comment</a></li>
+                                <li><a href="#">Cartoon</a></li>
+                                <li><a href="#">Letters</a></li>
+                                <li><a href="#">Interview</a></li>
+                                <li><a href="#">Lead</a></li>
+
+
+                            </ul>
+                        </div>
+
+                        <!-- Column 3: Business, Sport, Sci-Tech -->
+                        <div class="sitemap-column">
+                            <h4>Business</h4>
+                            <ul>
+                                <li><a href="#">Agri-Business</a></li>
+                                <li><a href="#">Industry</a></li>
+                                <li><a href="#">Economy</a></li>
+                                <li><a href="#">Market</a></li>
+                                <li><a href="#">Budget</a></li>
+                                <li><a href="#">
+                                        <div class=""></div>
+                                    </a></li>
+
+                            </ul>
+                            <h4>Sport</h4>
+                            <ul>
+                                <li><a href="#">Cricket</a></li>
+                                <li><a href="#">Football</a></li>
+                                <li><a href="#">Hockey</a></li>
+                                <li><a href="#">Tennis</a></li>
+                                <li><a href="#">Athletics</a></li>
+                                <li><a href="#">Motersport</a></li>
+                                <li><a href="#">Races</a></li>
+                                <li><a href="#">Other Sports</a></li>
+                            </ul>
+                            <h4>Sci-Tech</h4>
+                            <ul>
+                                <li><a href="#">Science</a></li>
+                                <li><a href="#">Technology</a></li>
+                                <li><a href="#">Health</a></li>
+                                <li><a href="#">Agriculture</a></li>
+                                <li><a href="#">Environment</a></li>
+                                <li><a href="#">Gadgets</a></li>
+                                <li><a href="#">Internet</a></li>
+
+                            </ul>
+                        </div>
+
+                        <!-- Column 4: States & Cities -->
+                        <div class="sitemap-column">
+                            <h4>States</h4>
+                            <ul>
+                                <li><a href="#">Andhra Pradesh</a></li>
+                                <li><a href="#">Karnataka</a></li>
+                                <li><a href="#">Kerala</a></li>
+                                <li><a href="#">Tamil Nadu</a></li>
+                                <li><a href="#">Telangana</a></li>
+                            </ul>
+                            <h4>Cities</h4>
+                            <ul>
+                                <li><a href="#">Bengaluru</a></li>
+                                <li><a href="#">Chennai</a></li>
+                                <li><a href="#">Coimbatore</a></li>
+                                <li><a href="#">Delhi</a></li>
+                                <li><a href="#">Hyderabad</a></li>
+                                <li><a href="#">kochi</a></li>
+                                <li><a href="#">Kolkata</a></li>
+                                <li><a href="#">Kozhikode</a></li>
+                                <li><a href="#">Coimbatore</a></li>
+                                <li><a href="#">Madurai</a></li>
+                                <li><a href="#">Mangaluru</a></li>
+                                <li><a href="#">Mumbai</a></li>
+                                <li><a href="#">Puducherry</a></li>
+                                <li><a href="#">Thiruvananthapuram</a></li>
+                                <li><a href="#">Tiruchirapalli</a></li>
+                                <li><a href="#">Vijayawada</a></li>
+                                <li><a href="#">Visakhapatnam</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 5 & 6: Trending & Latest News -->
+                        <div class="latest-news-grid sitemap-column">
+                            <h4>Trending on The Hindu</h4>
+                            <ul>
+                                <li><a href="#">News <i class="fa-duotone fa-solid fa-arrow-trend-up"
+                                            style="color: red;"></i></a></li>
+                                <li><a href="#">India News <i class="fa-duotone fa-solid fa-arrow-trend-up"
+                                            style="color: red;"></i></a>
+                                </li>
+                                <li><a href="#">Hyderabad News <i class="fa-duotone fa-solid fa-arrow-trend-up"
+                                            style="color: red;"></i></a>
+                                </li>
+                                <li><a href="#">Bengaluru News <i class="fa-duotone fa-solid fa-arrow-trend-up"
+                                            style="color: red;"></i></a>
+                                </li>
+                                <li><a href="#">Sports, IPL 2025 News <i class="fa-duotone fa-solid fa-arrow-trend-up"
+                                            style="color: red;"></i></a></li>
+                                <li><a href="#">Delhi news <i class="fa-duotone fa-solid fa-arrow-trend-up"
+                                            style="color: red;"></i></a>
+                                </li>
+                                <li><a href="#">Live News <i class="fa-duotone fa-solid fa-arrow-trend-up"
+                                            style="color: red;"></i></a></li>
+                                <li><a href="#">Entertainment News <i class="fa-duotone fa-solid fa-arrow-trend-up"
+                                            style="color: red;"></i></a></li>
+                                <li><a href="#">Sitemap <i class="fa-duotone fa-solid fa-arrow-trend-up"
+                                            style="color: red;"></i></a></li>
+                            </ul>
+
+                            <h4>Latest News</h4>
+                            <ul>
+                                <li><a href="#">UN refugee agency says more than 122 million people displaced</a></li>
+                                <li><a href="#">Youth stabbed to death in northeast Delhi</a></li>
+                                <li><a href="#">New menus in Mumbai you should try</a></li>
+                                <li><a href="#">More than 55,000 Palestinians have been killed</a></li>
+                                <li><a href="#">Attempts to resolve stand-off with Anbumani failed: PMK founder
+                                        Ramadoss</a>
+                                </li>
+                                <li><a href="#">‘DNA’ trailer: Atharvaa, Nimisha Sajayan promise an intense crime
+                                        thriller</a></li>
+                                <li><a href="#">Anatomy of an IPL fan: cricketers, experts and fans examine why the game
+                                        matters to them</a></li>
+                                <li><a href="#">Kerala Civil Police Officer arrested for planting hidden camera in women
+                                        police changing room</a></li>
+                                <li><a href="#">New Tatkal ticket booking rules: How to link Aadhaar to your IRCTC
+                                        account</a></li>
+                                <li><a href="#">iQOO Z10 Lite 5G confirms to use Dimensity processor and Sony camera</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-bottom-bar">
+                        <ul class="social-links">
+                            <li><a href="https://www.whatsapp.com/channel/0029VaAvwQJ90x34WZ6FDg36"><i
+                                        class="fa-brands fa-whatsapp"></i></a></li>
+                            <li><a href="https://x.com/The_Hindu"> <i class="fa-brands fa-x-twitter"></i></a></li>
+                            <li><a href="https://www.facebook.com/thehindu"><i class="fa-brands fa-facebook"></i></a>
+                            </li>
+                            <li><a href="https://www.instagram.com/the_hindu/?ref=badge"><i
+                                        class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="https://www.linkedin.com/school/the-hindu/"><i
+                                        class="fa-brands fa-linkedin"></i></a></li>
+                            <li><a href="https://www.youtube.com/user/The1878Hindu"><i
+                                        class="fa-brands fa-youtube"></i></a>
+                            </li>
+                            <li><a href="https://open.spotify.com/show/5yESTCj0iikA81EP3uXkQC"><i
+                                        class="fa-brands fa-spotify"></i></a></li>
+                            <li><a href="https://t.me/THnewsupdates"><i class="fa-brands fa-telegram"></i></a></li>
+                        </ul>
+                        <div class="legal-links">
+                            <a href="#">TERMS OF USE</a> /
+                            <a href="#">PRIVACY POLICY</a>
+                        </div>
+                        <div class="copyright-bar">
+                            <span>Copyright© 2025, THG PUBLISHING PVT LTD. or its affiliated companies. All rights
+                                reserved.</span>
+                            <a href="#" id="backToTopBtn">BACK TO TOP ↑</a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+
+
+</body>
+
+</html>

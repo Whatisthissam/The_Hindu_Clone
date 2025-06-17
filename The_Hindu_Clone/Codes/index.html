@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hindu - Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+
+<body>
+
+    <div class="container">
+        <!--  heading section -->
+        <header class="main-header">
+            <div class="header-top">
+            </div>
+            <div class="header-middle">
+                <span>June 17, 2025</span>
+                <a href="https://epaper.thehindu.com/reader?utm_source=Hindu&utm_medium=Menu&utm_campaign=Header&_gl=1*1u4uvwa*_gcl_au*NDk4ODM2Nzc2LjE3MjUwNzc4OTIuNTIxNjMwNzI4LjE3MjU0NDM0NDkuMTcyNTQ0MzQ0OQ.."
+                    class="epaper-link">
+                    <span class="span1">e-Paper</span>
+                </a>
+                <div class="logo">
+                    <img data-src="../Assets/thehindu-logo.svg" class="lazy-img" alt="THE HINDU Logo" />
+                </div>
+                <div class="header-actions">
+                    <!-- Accessibility Controls -->
+                    <div class="accessibility-controls">
+                        <button id="decrease-font" aria-label="Decrease font size">-</button>
+                        <button id="increase-font" aria-label="Increase font size">+</button>
+                        <label class="theme-switch" for="theme-toggle-checkbox">
+                            <input type="checkbox" id="theme-toggle-checkbox" aria-label="Toggle dark mode" hidden>
+                            <span class="emoji-toggle"></span>
+                        </label>
+                    </div>
+                    <a href="../Codes/login.html" class="login-link">LOGIN</a>
+                    <a href="../Codes/subscription.html">
+                        <button class="subscribe-btn">SUBSCRIBE</button>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!--  NAVIGATION BAR  -->
+        <nav class="main-nav" role="navigation">
+            <!-- Left: Search -->
+            <div class="search-box">
+                <input type="text" id="nav-search" placeholder="☰ Search" aria-label="Search sections" />
+                <button id="search-btn" aria-label="Run search"></button>
+            </div>
+
+
+            <!-- Center: nav links -->
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../Codes/india.html">India</a></li>
+                <li><a href="../Codes/world.html">World</a></li>
+                <li><a href="../Codes/movie.html">Movies</a></li>
+                <li><a href="../codes/sports.html">Sport</a></li>
+                <li><a href="../Codes/data.html">Data</a></li>
+                <li><a href="../Codes/health.html">Health</a></li>
+                <li><a href="../Codes/Opinion.html">Opinion</a></li>
+                <li><a href="../Codes/Science.html">Science</a></li>
+                <li><a href="../Codes/Business.html">Business</a></li>
+                <li><a href="../Codes/subscription.html" class="th-premium-link"><span>TH</span> Premium</a></li>
+            </ul>
+        </nav>
+
+        <article class="on-this-day">
+            <h2>On This Day</h2>
+            <p id="today-date" class="date"></p>
+            <ul id="events-list"></ul>
+        </article>
+
+        <!-- ===== MAIN CONTENT AREA (3-COLUMN GRID) ===== -->
+        <main class="content-grid">
+            <!-- == LEFT COLUMN: PREMIUM SECTION == -->
+            <aside class="premium-section">
+                <h2 class="section-title-red">Premium</h2>
+                <article class="side-article">
+                    <a href="../Codes/waterharvesting.html" target="_blank"
+                        style="text-decoration: none; color: inherit;">
+                        <h3>A new water harvesting model promises to help Rajasthan's farmers</h3>
+                        <p class="author">MOHAMMED IQBAL</p>
+                    </a>
+                    <i class="fa-regular fa-bookmark bookmark-icon" data-id="rajasthan-water"
+                        data-title="A new water harvesting model promises to help Rajasthan's farmers"
+                        data-link="../Codes/waterharvesting.html"></i>
+                </article>
+                <article class="side-article with-image">
+                    <div class="article-text">
+                        <a href="../Codes/heeng.html" target="_blank" style="text-decoration: none; color: inherit;">
+                            <h3>The story of how heeng came to be successfully cultivated in India</h3>
+                            <p class="author">SANJAY KUMAR, SHEKHAR MANDE</p>
+                        </a>
+                        <i class="fa-regular fa-bookmark bookmark-icon" data-id="heeng-story"
+                            data-title="The story of how heeng came to be successfully cultivated in India"
+                            data-link="../Codes/heeng.html"></i>
+                    </div>
+                </article>
+
+                <a href="cyclone.html" class="article-link">
+                    <article class="side-article">
+                        <h3>
+                            Of cyclones, coal dust and commutes: A meteorologist's memoir on Madras
+                        </h3>
+                        <p class="author">HIRRA AZMAT</p>
+                </a>
+                <i class="fa-regular fa-bookmark bookmark-icon" data-id="madras-memoir"
+                    data-title="Of cyclones, coal dust and commutes: A meteorologist's memoir on Madras"></i>
+                </article>
+
+
+
+                <a href="plant.html" class="article-link">
+                    <article class="side-article with-image">
+                        <div class="article-text">
+                            <h3>How does a plant's first shoot rise safely through soil, into daylight?</h3>
+                            <p class="author">VASUDEVAN MUKUNTH</p>
+                        </div>
+                </a>
+                </article>
+                <i class="fa-regular fa-bookmark bookmark-icon" data-id="plant-shoot"
+                    data-title="How does a plant's first shoot rise safely through soil, into daylight?"></i>
+
+
+            </aside>
+
+            <!-- == CENTER COLUMN: MAIN STORIES == -->
+            <section class="main-stories">
+                <a href="meghalaya-article.html" class="article-link">
+                    <article class="featured-article">
+                        <p class="category">MEGHALAYA</p>
+                        <h1>Meghalaya murder case: Police get 7-day remand of another accused</h1>
+                        <p>Three other accused arrested in the Raja Raghuvanshi murder case were sent to the Meghalaya
+                            police's transit custody...</p>
+                        <p class="author">PTI</p>
+                        <img data-src="../Assets/Screenshot 2025-06-11 at 10.46.48 PM.png" class="lazy-img"
+                            alt="Accused in Meghalaya murder case">
+                    </article>
+                </a>
+                <i class="fa-regular fa-bookmark bookmark-icon" data-id="meghalaya-murder"
+                    data-title="Meghalaya murder case: Police get 7-day remand of another accused"></i>
+                <div class="sub-articles">
+                    <a href="bengluru.html" class="article-link">
+                        <article>
+                            <h2>
+                                Bengaluru stampede: Karnataka High Court posts next hearing on June 12...
+                                <i class="fa-regular fa-bookmark bookmark-icon" data-id="bengaluru-stampede"
+                                    data-title="Bengaluru stampede: Karnataka High Court posts next hearing on June 12..."></i>
+                            </h2>
+                        </article>
+                    </a>
+
+
+                    <a href="ins.html" class="article-link">
+                        <article>
+                            <h2>
+                                INS Surat carrying 18 crew rescued from fire-struck Singapore-flagged container ship...
+                            </h2>
+                            <i class="fa-regular fa-bookmark bookmark-icon" data-id="ins-surat-rescue"
+                                data-title="INS Surat carrying 18 crew rescued from fire-struck Singapore-flagged container ship..."></i>
+                            <p class="author">THE HINDU BUREAU</p>
+                        </article>
+                    </a>
+                </div>
+            </section>
+
+            <!-- == RIGHT COLUMN: LATEST NEWS == -->
+            <aside class="latest-news">
+                <h2 class="section-title-red">Latest News</h2>
+                <ul class="timeline">
+                    <li>
+                        <p class="time">45 mins ago - World</p>
+                        <a href="isreal.html" class="article-link">
+                            <p class="headline">
+                                Israel set to deport Greta Thunberg, other activists
+                            </p>
+                        </a>
+                        <i class="fa-regular fa-bookmark bookmark-icon" data-id="israel-greta"
+                            data-title="Israel set to deport Greta Thunberg, other activists"></i>
+                    </li>
+
+                    <li>
+                        <p class="time">56 mins ago - India</p>
+                        <p class="headline">India's population touches 1.46 billion, fertility drops <i
+                                class="fa-regular fa-bookmark bookmark-icon" data-id="india-population"
+                                data-title="India's population touches 1.46 billion, fertility drops"></i></p>
+                    </li>
+                    <li>
+                        <p class="time">57 mins ago - Andhra Pradesh</p>
+                        <p class="headline">Kommenini arrest: CM Naidu using fake narratives <i
+                                class="fa-regular fa-bookmark bookmark-icon" data-id="kommenini-arrest"
+                                data-title="Kommenini arrest: CM Naidu using fake narratives"></i></p>
+                    </li>
+                </ul>
+                <a href="#" class="read-more">READ MORE STORIES</a>
+            </aside>
+        </main>
+    </div> <!-- End of top container -->
+
+    <!-- ===== EDITORIALS SECTION (WHITE BACKGROUND) ===== -->
+    <section class="editorials-section">
+        <div class="container">
+            <div class="editorial-grid">
+                <!-- Column 1: Logo and Links -->
+                <div class="editorial-logo-area">
+                    <p class="date">Tuesday, June 15</p>
+                    <img data-src="../Assets/elephant.png" class="lazy-img hindu-crest" alt="The Hindu Logo">
+                    <p class="read-in">READ OUR EDITORIALS IN</p>
+                    <a href="#" class="hindi-link">हिंदी</a>
+                </div>
+                <!-- Column 2: First Editorial -->
+                <article class="editorial-item">
+                    <h2>Tighten the process: On the Election Commission of India, election processes <i
+                            class="fa-regular fa-bookmark bookmark-icon" data-id="eci-process"
+                            data-title="Tighten the process: On the Election Commission of India, election processes"></i>
+                    </h2>
+                    <p>The ECI must address legitimate concerns about voter rolls and transparency</p>
+                </article>
+                <!-- Column 3: Second Editorial -->
+                <article class="editorial-item">
+                    <h2>History lessons: On the French Open <i class="fa-regular fa-bookmark bookmark-icon"
+                            data-id="french-open-history" data-title="History lessons: On the French Open"></i></h2>
+                    <p>The top layer in men's and women's tennis now sports a settled look</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TOP VIDEOS SECTION (BLACK BACKGROUND) ===== -->
+    <section class="videos-section">
+        <div class="container">
+            <header class="videos-header">
+                <div class="th-logo-circle red-bg">TH</div>
+                <h1>Top Videos</h1>
+            </header>
+            <div class="video-grid">
+                <!-- Left Column: Main Video -->
+                <div class="main-video">
+                    <a href="https://www.youtube.com/watch?v=K7-8BbLj0RY" target="_blank">
+                        <div class="video-thumbnail-large">
+                            <img data-src="../Assets/thumbnail-1.jpg" class="lazy-img" alt="Case Study: Sanju">
+                        </div>
+                        <h2>Newswrap June 11, 2025: SpaceX AX-4 mission postponed, EAM Jaishankar in EU, U.S. China
+                            tradewar
+                            <i class="fa-regular fa-bookmark bookmark-icon" data-id="newswrap-june11"
+                                data-title="Newswrap June 11, 2025: SpaceX AX-4 mission postponed, EAM Jaishankar in EU, U.S. China tradewar"
+                                data-link="https://www.youtube.com/watch?v=K7-8BbLj0RY"></i>
+                        </h2>
+                    </a>
+                </div>
+
+                <!-- Right Column: Playlist -->
+                <div class="video-playlist">
+                    <a href="https://youtu.be/PWe2Ve1V-mA?si=iKP_zGqbzq01qzwP" class="video-playlist-link">
+                        <article class="video-playlist-item">
+                            <div class="video-thumbnail-small">
+                                <img data-src="../Assets/thumbnail-2.jpg" class="lazy-img" alt="Kashmir Thumbnail">
+                            </div>
+                            <p>
+                                How a ‘shadow’ fleet of oil tankers is helping Russia rake in the moolah | Business
+                                Matters
+                                <i class="fa-regular fa-bookmark bookmark-icon" data-id="russia-oil-fleet"
+                                    data-title="How a ‘shadow’ fleet of oil tankers is helping Russia rake in the moolah | Business Matters"></i>
+                            </p>
+                        </article>
+                    </a>
+
+
+                    <a href="https://youtu.be/drIP7hpTy5A?si=oGZUY8FhIyzAWikH" class="video-playlist-link">
+                        <article class="video-playlist-item">
+                            <div class="video-thumbnail-small">
+                                <img data-src="../Assets/thumbnail-3.jpg" class="lazy-img" alt="Politics Thumbnail">
+                            </div>
+                            <p>
+                                24 co-ordinated attacks jolt Columbia, at least 7 dead in escalating violence
+                                <i class="fa-regular fa-bookmark bookmark-icon" data-id="columbia-attacks"
+                                    data-title="24 co-ordinated attacks jolt Columbia, at least 7 dead in escalating violence"></i>
+                            </p>
+                        </article>
+                    </a>
+
+                    <a href="https://youtu.be/EoT_Q2yy_q4?si=aeOSxdy8OVZhMEJu" class="video-playlist-link">
+                        <article class="video-playlist-item">
+                            <div class="video-thumbnail-small">
+                                <img data-src="../Assets/thumbnail-4.jpg" class="lazy-img" alt="Cinema Thumbnail">
+                            </div>
+                            <p>
+                                In conversation with AIMPLB president Khalid Saifullah Rahmani | Waqf Amendment Act
+                                <i class="fa-regular fa-bookmark bookmark-icon" data-id="aimplb-waqf"
+                                    data-title="In conversation with AIMPLB president Khalid Saifullah Rahmani | Waqf Amendment Act"></i>
+                            </p>
+                        </article>
+                    </a>
+
+                    <a href="https://youtu.be/RETs_EgwFf8?si=EzdfB0k6iY31HJyd" class="video-playlist-link">
+                        <article class="video-playlist-item">
+                            <div class="video-thumbnail-small">
+                                <img data-src="../Assets/thumbnail-5.jpg" class="lazy-img" alt="Cinema Thumbnail">
+                            </div>
+                            <p>
+                                Article 143: What is the context of the Presidential reference to SC regarding TN
+                                Governor case?
+                                <i class="fa-regular fa-bookmark bookmark-icon" data-id="article-143-tn"
+                                    data-title="Article 143: What is the context of the Presidential reference to SC regarding TN Governor case?"></i>
+                            </p>
+                        </article>
+                    </a>
+
+                    <a href="https://www.youtube.com/live/GkmsR2EvEoM?si=Aj2TpfYGDQIPtFzD" class="video-playlist-link">
+                        <article class="video-playlist-item">
+                            <div class="video-thumbnail-small">
+                                <img data-src="../Assets/thumbnail-6.jpg" class="lazy-img" alt="Cinema Thumbnail">
+                            </div>
+                            <p>
+                                Communal conflict in Coastal Karnataka: Will the special taskforce be effective?
+                                <i class="fa-regular fa-bookmark bookmark-icon" data-id="karnataka-conflict"
+                                    data-title="Communal conflict in Coastal Karnataka: Will the special taskforce be effective?"></i>
+                            </p>
+                        </article>
+                    </a>
+                </div>
+            </div>
+            <h1 style="text-align: center; font-family: Arial, sans-serif; font-size: 20px; margin-top: 50px;">
+                <a href="https://www.youtube.com/@TheHinduOfficial" target="_blank"
+                    style="text-decoration: none; color: inherit;">
+                    See More →
+                </a>
+            </h1>
+        </div>
+    </section>
+
+    <h2 class="heading">Top Picks</h2>
+
+    <section class="opinion-section">
+        <h2 class="section-title">The Hindu Opinion</h2>
+        <div class="premium">
+            <img data-src="../Assets/Screenshot 2025-06-12 at 12.51.49 AM.png" class="lazy-img premium-logo"
+                alt="Premium Logo">
+            <span>PREMIUM</span>
+        </div>
+        <div class="opinion-grid">
+            <div class="card">
+                <img data-src="../Assets/im1.jpg" class="lazy-img" alt="Census image">
+                <h3>The hazards of going global on India-Pakistan issues <i class="fa-regular fa-bookmark bookmark-icon"
+                        data-id="india-pakistan-global"
+                        data-title="The hazards of going global on India-Pakistan issues"></i></h3>
+                <p class="author">T.P. Sreenivasan</p>
+            </div>
+            <div class="card-column">
+                <div class="text-card">
+                    <h4>The endgame in the Russia-Ukraine war <i class="fa-regular fa-bookmark bookmark-icon"
+                            data-id="russia-ukraine-endgame" data-title="The endgame in the Russia-Ukraine war"></i>
+                    </h4>
+                    <p class="author">K.B. Usha</p>
+                </div>
+                <div class="text-card">
+                    <h4>The difficult task of keeping everyone happy <i class="fa-regular fa-bookmark bookmark-icon"
+                            data-id="keeping-everyone-happy"
+                            data-title="The difficult task of keeping everyone happy"></i></h4>
+                    <p class="author">R. Ravikanth Reddy</p>
+                </div>
+            </div>
+            <div class="card">
+                <img data-src="../Assets/im2.jpg" class="lazy-img" alt="Green Humour">
+                <h3>Foreign aid and financial woes <i class="fa-regular fa-bookmark bookmark-icon"
+                        data-id="foreign-aid-woes" data-title="Foreign aid and financial woes"></i></h3>
+                <p class="author">Tiki Rajwi</p>
+            </div>
+            <div class="card-column">
+                <div class="text-card">
+                    <h4>India’s legal bridge is one of reciprocity, not roadblocks <i
+                            class="fa-regular fa-bookmark bookmark-icon" data-id="india-legal-bridge"
+                            data-title="India’s legal bridge is one of reciprocity, not roadblocks"></i></h4>
+                    <p class="author">Shivang Tripathi,Shaiwal Satyarthi</p>
+                </div>
+                <div class="text-card">
+                    <h4>When triumph turned into tragedy <i class="fa-regular fa-bookmark bookmark-icon"
+                            data-id="triumph-tragedy" data-title="When triumph turned into tragedy"></i></h4>
+                    <p class="author">Yashovardhan Azad</p>
+                </div>
+            </div>
+        </div>
+        <h1 style="text-align: center; font-family: Arial, sans-serif; font-size: 20px;">See More →</h1>
+    </section>
+    <br><br><br>
+
+    <section class="opinion-section">
+        <h2 class="section-title">The Hindu Explains</h2>
+        <div class="premium">
+            <img data-src="../Assets/Screenshot 2025-06-12 at 12.51.49 AM.png" class="lazy-img premium-logo"
+                alt="Premium Logo">
+            <span>PREMIUM</span>
+        </div>
+        <div class="opinion-grid">
+            <div class="card">
+                <img data-src="../Assets/im9.jpg" class="lazy-img" alt="Census image">
+                <h3>What is the significance of the Census? | Explained <i class="fa-regular fa-bookmark bookmark-icon"
+                        data-id="census-explained" data-title="What is the significance of the Census? | Explained"></i>
+                </h3>
+                <p class="author">Rangarajan R.</p>
+            </div>
+            <div class="card-column">
+                <div class="text-card">
+                    <h4>Jan Suraaj Party pitches Prashant Kishor as Bihar’s ‘most popular’ CM pick - a look at its poll
+                        strategy <i class="fa-regular fa-bookmark bookmark-icon" data-id="jan-suraaj-pk"
+                            data-title="Jan Suraaj Party pitches Prashant Kishor as Bihar’s ‘most popular’ CM pick - a look at its poll strategy"></i>
+                    </h4>
+                    <p class="author">Suchitra Karthikeyan</p>
+                </div>
+                <div class="text-card">
+                    <h4>Jan Suraaj Party pitches Prashant Kishor as Bihar’s ‘most popular’ CM pick - a look at its poll
+                        strategy <i class="fa-regular fa-bookmark bookmark-icon" data-id="jan-suraaj-pk-2"
+                            data-title="Jan Suraaj Party pitches Prashant Kishor as Bihar’s ‘most popular’ CM pick - a look at its poll strategy"></i>
+                    </h4>
+                    <p class="author">Suchitra Karthikeya</p>
+                </div>
+                <div class="text-card">
+                    <h4>What Google plans to do about online search antitrust decision | Explained <i
+                            class="fa-regular fa-bookmark bookmark-icon" data-id="google-antitrust-explained"
+                            data-title="What Google plans to do about online search antitrust decision | Explained"></i>
+                    </h4>
+                    <p class="author">Sahana Venugopal</p>
+                </div>
+            </div>
+            <div class="card">
+                <img data-src="../Assets/im8.jpg" class="lazy-img" alt="Green Humour">
+                <h3>What is new in Ladakh’s government job reservation policy? | Explained <i
+                        class="fa-regular fa-bookmark bookmark-icon" data-id="ladakh-jobs-explained"
+                        data-title="What is new in Ladakh’s government job reservation policy? | Explained"></i></h3>
+                <p class="author">Vijaita Singh</p>
+            </div>
+            <div class="card-column">
+                <img data-src="../Assets/im7.jpg" class="lazy-img" alt="Green Humour">
+                <div class="text-card">
+                    <h4>Is IBC an effective resolution tool? | Explained <i class="fa-regular fa-bookmark bookmark-icon"
+                            data-id="ibc-tool-explained"
+                            data-title="Is IBC an effective resolution tool? | Explained"></i></h4>
+                    <p class="author">Sanjay Vijayakumar</p>
+                </div>
+            </div>
+        </div>
+        <h1 style="text-align: center; font-family: Arial, sans-serif; font-size: 20px;">See More →</h1>
+    </section>
+    <br><br><br>
+
+    <!-- START: TH Shorts Section -->
+    <div class="shorts-section">
+        <div class="shorts-title-container">
+            <span class="line"></span>
+            <h2 class="shorts-title"><span class="th-logo">TH</span> Shorts</h2>
+            <span class="line"></span>
+        </div>
+        <div class="shorts-container">
+            <a href="https://www.thehindu.com/shorts/watch-why-do-i-need-rcb-i-dont-drink-royal-challenge-says-karnataka-deputy-cm-dk-shivakumar/article69683121.ece"
+                class="card-link">
+                <div class="short-card lazy-bg" data-bg="url('../Assets/s1.jpeg')">
+                    <p class="short-caption">Watch: "Why do I need RCB? I don't drink Royal Challenge,"</p>
+                </div>
+            </a>
+            <a href="https://www.thehindu.com/shorts/watch-i-stand-by-my-son-errol-musk-backs-elon-musk-after-fallout-with-trump/article69678173.ece"
+                class="card-link">
+                <div class="short-card lazy-bg" data-bg="url('../Assets/s2.jpg')">
+                    <p class="short-caption">Watch: ‘I stand by my son’: Errol Musk backs Elon Musk after fallout with
+                        Trump</p>
+                </div>
+            </a>
+            <a href="https://www.thehindu.com/shorts/indias-global-diplomacy-post-operation-sindoor/article69675517.ece"
+                class="card-link">
+                <div class="short-card lazy-bg" data-bg="url('../Assets/s3.jpg')">
+                    <p class="short-caption">India’s global diplomacy post Operation Sindoor</p>
+                </div>
+            </a>
+            <a href="https://www.thehindu.com/shorts/watch-how-anurag-kashyap-shot-black-friday/article69673974.ece"
+                class="card-link">
+                <div class="short-card lazy-bg" data-bg="url('../Assets/s4.jpeg')">
+                    <p class="short-caption">Watch: How Anurag Kashyap shot ‘Black Friday’</p>
+                </div>
+            </a>
+            <a href="https://www.thehindu.com/shorts/watch-for-90s-kids-classic-telugu-snacks-with-a-modern-twist/article69673939.ece"
+                class="card-link">
+                <div class="short-card lazy-bg" data-bg="url('../Assets/s5.jpeg')">
+                    <p class="short-caption">Watch: For 90s kids: Classic Telugu snacks with a modern twist</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <h1 style="text-align: center; font-family: Arial, sans-serif; font-size: 20px;">See More →</h1>
+    <!-- END: TH Shorts Section -->
+    <br><br><br>
+
+    <!-- START: Food Section -->
+    <div class="food-section">
+        <div class="food-title-container">
+            <span class="line"></span>
+            <h2 class="food-title"><span class="th-logo">TH</span> Food</h2>
+            <span class="line"></span>
+        </div>
+        <div class="food-grid">
+            <a href="food1.html" target="_blank" style="text-decoration: none; color: inherit;">
+                <article class="food-article-card">
+                    <div class="card-image-container">
+                        <img data-src="../Assets/F1.jpg" class="lazy-img" alt="Chefs giving a class">
+                    </div>
+                    <div class="card-text-content">
+                        <p class="card-category">Features</p>
+                        <h3 class="card-headline">
+                            The world's best restaurant, Disfrutar, holds classes for India's top chefs
+                            <i class="fa-regular fa-bookmark bookmark-icon" data-id="disfrutar-chefs"
+                                data-title="The world's best restaurant, Disfrutar, holds classes for India's top chefs"></i>
+                        </h3>
+                        <p class="card-author">Anubhuti Krishna</p>
+                    </div>
+                </article>
+            </a>
+
+
+            <a href="food2.html" class="food-article-link">
+                <article class="food-article-card">
+                    <div class="card-image-container">
+                        <img data-src="../Assets/F2.jpg" class="lazy-img" alt="Chef with a spread of food">
+                    </div>
+                    <div class="card-text-content">
+                        <p class="card-category">Features</p>
+                        <h3 class="card-headline">
+                            Feathers hotel celebrates the Tamil flavours that unite Singapore, Malaysia and Chennai
+                            <i class="fa-regular fa-bookmark bookmark-icon" data-id="feathers-hotel-flavours"
+                                data-title="Feathers hotel celebrates the Tamil flavours that unite Singapore, Malaysia and Chennai"></i>
+                        </h3>
+                        <p class="card-author">Chitradeepa Anantharam</p>
+                    </div>
+                </article>
+            </a>
+
+            <a href="food3.html" class="food-article-link">
+                <article class="food-article-card">
+                    <div class="card-image-container">
+                        <img data-src="../Assets/F3TH.png" class="lazy-img" alt="Interior of an ice cream shop">
+                    </div>
+                    <div class="card-text-content">
+                        <p class="card-category">Dining</p>
+                        <h3 class="card-headline">
+                            Mumbai's iconic Naturals Ice Cream launches in Chennai on KNK road
+                            <i class="fa-regular fa-bookmark bookmark-icon" data-id="naturals-chennai"
+                                data-title="Mumbai's iconic Naturals Ice Cream launches in Chennai on KNK road">
+                            </i>
+                        </h3>
+                    </div>
+                </article>
+            </a>
+
+
+
+            <a href="subscription.html" class="food-article-link">
+                <article class="food-article-card">
+                    <div class="card-image-container">
+                        <img data-src="../Assets/F4.jpeg" class="lazy-img" alt="Man holding a large plate of halwa">
+                    </div>
+                    <div class="card-text-content">
+                        <p class="card-category">Premium</p>
+                        <h3 class="card-headline">
+                            A 105-year legacy: Hyderabad's Jauzi Halwa which takes 16 hours to make
+                            <i class="fa-regular fa-bookmark bookmark-icon" data-id="jauzi-halwa-legacy"
+                                data-title="A 105-year legacy: Hyderabad's Jauzi Halwa which takes 16 hours to make"></i>
+                        </h3>
+                        <p class="card-author">Sania Tabassum</p>
+                    </div>
+                </article>
+            </a>
+
+        </div>
+        <h1 style="text-align: center; font-family: Arial, sans-serif; font-size: 20px;">See More →</h1>
+    </div>
+    <!-- END: Food Section -->
+    <br><br><br>
+
+    <!-- START: Top News Section -->
+    <div class="top-news-section">
+        <h2 class="top-news-title">Top News Today</h2>
+        <nav class="top-news-nav">
+            <ul>
+                <li><a href="#" class="active">Top News</a></li>
+                <li><a href="india.html">India</a></li>
+                <li><a href="world.html">World</a></li>
+                <li><a href="sports.html">Sports</a></li>
+                <li><a href="Business.html">Business</a></li>
+                <li><a href="Science.html">Science</a></li>
+                <li><a href="#">Technology</a></li>
+                <li><a href="#">Entertainment</a></li>
+                <li><a href="#">Education</a></li>
+            </ul>
+        </nav>
+        <div class="top-news-grid">
+            <div class="news-column left-column">
+                <article class="news-article">
+                    <img data-src="../Assets/tnt1.jpg" class="lazy-img" alt="Musk and Trump">
+                    <p class="category">World</p>
+                    <h3 class="headline">Vance says Trump doesn't want long-term feud with Musk after duo buries the
+                        hatchet <i class="fa-regular fa-bookmark bookmark-icon" data-id="vance-trump-musk"
+                            data-title="Vance says Trump doesn't want long-term feud with Musk after duo buries the hatchet"></i>
+                    </h3>
+                    <p class="author">Reuters</p>
+                </article>
+                <article class="news-article">
+                    <img data-src="../Assets/tnt2.jpeg" class="lazy-img" alt="Protestors and police">
+                    <p class="category">World</p>
+                    <h3 class="headline">Los Angeles-area mayors demand that Trump administration stop stepped-up
+                        immigration raids <i class="fa-regular fa-bookmark bookmark-icon" data-id="la-mayors-raids"
+                            data-title="Los Angeles-area mayors demand that Trump administration stop stepped-up immigration raids"></i>
+                    </h3>
+                    <p class="author">AP</p>
+                </article>
+                <article class="news-article">
+                    <p class="category">India</p>
+                    <h3 class="headline">India-EU FTA will elevate strategic partnership: Jaishankar <i
+                            class="fa-regular fa-bookmark bookmark-icon" data-id="india-eu-fta"
+                            data-title="India-EU FTA will elevate strategic partnership: Jaishankar"></i></h3>
+                    <p class="author">Kallol Bhattacherjee</p>
+                </article>
+            </div>
+            <div class="news-column middle-column">
+                <article class="main-feature">
+                    <img data-src="../Assets/tnt3.jpg" class="lazy-img" alt="President speaking at a podium">
+                    <p class="category">World</p>
+                    <h2 class="headline-large">U.S. reduces presence of staffers not deemed essential in West Asia as
+                        tensions rise <i class="fa-regular fa-bookmark bookmark-icon" data-id="us-west-asia"
+                            data-title="U.S. reduces presence of staffers not deemed essential in West Asia as tensions rise"></i>
+                    </h2>
+                    <p class="snippet">President Donald Trump...[summary]</p>
+                    <p class="author">AP</p>
+                </article>
+                <div class="middle-sub-grid">
+                    <article class="news-article">
+                        <p class="category">India</p>
+                        <h3 class="headline">Raghuvanshi honeymoon murder... <i
+                                class="fa-regular fa-bookmark bookmark-icon" data-id="raghuvanshi-murder-2"
+                                data-title="Raghuvanshi honeymoon murder..."></i></h3>
+                        <p class="author">PTI</p>
+                    </article>
+                    <article class="news-article">
+                        <p class="category">Cricket</p>
+                        <h3 class="headline">Mitchell Starc removes Rickleton... <i
+                                class="fa-regular fa-bookmark bookmark-icon" data-id="starc-rickleton"
+                                data-title="Mitchell Starc removes Rickleton..."></i></h3>
+                        <p class="author">ANI</p>
+                    </article>
+                </div>
+            </div>
+            <div class="news-column right-column">
+                <article class="news-article list-item">
+                    <p class="category">World</p>
+                    <h3 class="headline">All you need to know about the Los Angeles protests... <i
+                            class="fa-regular fa-bookmark bookmark-icon" data-id="la-protests-info"
+                            data-title="All you need to know about the Los Angeles protests..."></i></h3>
+                    <p class="author">Purtika Dua</p>
+                </article>
+                <article class="news-article list-item">
+                    <p class="category">Delhi</p>
+                    <h3 class="headline">IMD issues ‘red alert’ as severe heatwave grips Capital... <i
+                            class="fa-regular fa-bookmark bookmark-icon" data-id="delhi-red-alert"
+                            data-title="IMD issues ‘red alert’ as severe heatwave grips Capital..."></i></h3>
+                    <p class="author">The Hindu Bureau</p>
+                </article>
+                <article class="news-article list-item">
+                    <p class="category">World</p>
+                    <h3 class="headline">Trump says trade deal with China is done... <i
+                            class="fa-regular fa-bookmark bookmark-icon" data-id="trump-china-deal"
+                            data-title="Trump says trade deal with China is done..."></i></h3>
+                    <p class="author">Reuters</p>
+                </article>
+            </div>
+        </div>
+        <h1 style="text-align: center; font-family: Arial, sans-serif; font-size: 20px; margin-top: 50px;">See More →
+        </h1>
+    </div>
+
+    <!-- banner -->
+    <a href="https://www.thehindu.com/infographics/2025-06-06/neeraj-chopra-90m-throw/index.html" class="banner-link">
+        <div class="featured-banner lazy-bg" data-bg="url('../Assets/n.png')">
+            <div class="banner-content"></div>
+        </div>
+    </a>
+
+    <!-- START: States Updates Section -->
+    <div class="states-updates-section">
+        <div class="states-title-container">
+            <span class="line"></span>
+            <h2 class="states-title">States Updates</h2>
+            <span class="line"></span>
+        </div>
+        <nav class="states-nav">
+            <ul>
+                <li><a href="#" class="active">Tamil Nadu</a></li>
+                <li><a href="#">Telangana</a></li>
+                <li><a href="#">Karnataka</a></li>
+                <li><a href="#">Kerala</a></li>
+                <li><a href="#">Andhra Pradesh</a></li>
+            </ul>
+        </nav>
+        <div class="opinion-grid">
+            <div class="card">
+                <img data-src="../Assets/su1.jpeg" class="lazy-img" alt="Census image">
+                <h3>T.N. CM Stalin releases water from Mettur Dam for delta irrigation <i
+                        class="fa-regular fa-bookmark bookmark-icon" data-id="stalin-mettur-dam"
+                        data-title="T.N. CM Stalin releases water from Mettur Dam for delta irrigation"></i></h3>
+                <p class="author">The Hindu Bureau</p>
+            </div>
+            <div class="card-column">
+                <div class="text-card">
+                    <h4>Some DMK allies are in touch with us... <i class="fa-regular fa-bookmark bookmark-icon"
+                            data-id="dmk-allies" data-title="Some DMK allies are in touch with us..."></i></h4>
+                    <p class="author">The Hindu Bureau</p>
+                </div>
+                <div class="text-card">
+                    <h4>Some DMK allies are in touch with us... <i class="fa-regular fa-bookmark bookmark-icon"
+                            data-id="dmk-allies-2" data-title="Some DMK allies are in touch with us..."></i></h4>
+                    <p class="author">The Hindu Bureau</p>
+                </div>
+                <div class="text-card">
+                    <h4>‘Minister, functionaries with no knowledge...’ <i class="fa-regular fa-bookmark bookmark-icon"
+                            data-id="minister-no-knowledge"
+                            data-title="‘Minister, functionaries with no knowledge...’"></i></h4>
+                    <p class="author">Sahana Venugopal</p>
+                </div>
+            </div>
+            <div class="card">
+                <img data-src="../Assets/su2.jpeg" class="lazy-img" alt="Green Humour">
+                <h3>Father, son, and a war of words <i class="fa-regular fa-bookmark bookmark-icon"
+                        data-id="father-son-war" data-title="Father, son, and a war of words"></i></h3>
+                <p class="author">B. Kolappan</p>
+            </div>
+            <div class="card-column">
+                <div class="text-card">
+                    <h4>Madras High Court suspends IAS officer... <i class="fa-regular fa-bookmark bookmark-icon"
+                            data-id="madras-hc-suspends-ias" data-title="Madras High Court suspends IAS officer..."></i>
+                    </h4>
+                    <p class="author">Mohamed Imranullah S.</p>
+                </div>
+                <div class="text-card">
+                    <h4>Tamil Nadu to set up Special Task Force... <i class="fa-regular fa-bookmark bookmark-icon"
+                            data-id="tn-task-force" data-title="Tamil Nadu to set up Special Task Force..."></i></h4>
+                    <p class="author">S. Vijay Kumar</p>
+                </div>
+            </div>
+        </div>
+        <h1 style="text-align: center; font-family: Arial, sans-serif; font-size: 20px;">See More →</h1>
+    </div>
+
+    <!-- START: Cities Updates Section -->
+    <div class="cities-updates-section">
+        <div class="cities-title-container">
+            <span class="line"></span>
+            <h2 class="cities-title">Cities Updates</h2>
+            <span class="line"></span>
+        </div>
+        <nav class="cities-nav">
+            <ul>
+                <li><a href="#" class="active">Bengaluru</a></li>
+                <li><a href="#">Chennai</a></li>
+                <li><a href="#">Delhi</a></li>
+                <li><a href="#">Hyderabad</a></li>
+                <li><a href="#">Vishakapatnam</a></li>
+                <li><a href="#">Kotchi</a></li>
+                <li><a href="#">All Cities</a></li>
+            </ul>
+        </nav>
+        <div class="opinion-grid">
+            <div class="card">
+                <img data-src="../Assets/cu1.jpeg" class="lazy-img" alt="Census image">
+                <h3>Audit of 10 of 11 deaths reported... <i class="fa-regular fa-bookmark bookmark-icon"
+                        data-id="audit-10-deaths" data-title="Audit of 10 of 11 deaths reported..."></i></h3>
+                <p class="author">The Hindu Bureau</p>
+            </div>
+            <div class="card-column">
+                <div class="text-card">
+                    <h4>Airtel blocks 1,80,000 malicious links <i class="fa-regular fa-bookmark bookmark-icon"
+                            data-id="airtel-blocks-links" data-title="Airtel blocks 1,80,000 malicious links"></i></h4>
+                    <p class="author">The Hindu Bureau</p>
+                </div>
+                <div class="text-card">
+                    <h4>Airtel blocks 1,80,000 malicious links <i class="fa-regular fa-bookmark bookmark-icon"
+                            data-id="airtel-blocks-links-2" data-title="Airtel blocks 1,80,000 malicious links"></i>
+                    </h4>
+                    <p class="author">The Hindu Bureau</p>
+                </div>
+                <div class="text-card">
+                    <h4>Nandi Hills closed to public... <i class="fa-regular fa-bookmark bookmark-icon"
+                            data-id="nandi-hills-closed" data-title="Nandi Hills closed to public..."></i></h4>
+                    <p class="author">The Hindu Bureau</p>
+                </div>
+            </div>
+            <div class="card">
+                <img data-src="../Assets/cu2.jpeg" class="lazy-img" alt="Green Humour">
+                <h3>Sudha Murty conferred with Justice K.S. Hegde... <i class="fa-regular fa-bookmark bookmark-icon"
+                        data-id="sudha-murty-hegde" data-title="Sudha Murty conferred with Justice K.S. Hegde..."></i>
+                </h3>
+                <p class="author">The Hindu Bureau</p>
+            </div>
+            <div class="card-column">
+                <div class="text-card">
+                    <h4>Peenya Industrial Area notified... <i class="fa-regular fa-bookmark bookmark-icon"
+                            data-id="peenya-notified" data-title="Peenya Industrial Area notified..."></i></h4>
+                    <p class="author">Shilpa Elizabeth</p>
+                </div>
+                <div class="text-card">
+                    <h4>Bengaluru Urban DC summons... <i class="fa-regular fa-bookmark bookmark-icon"
+                            data-id="bengaluru-dc-summons" data-title="Bengaluru Urban DC summons..."></i></h4>
+                    <p class="author">The Hindu Bureau</p>
+                </div>
+            </div>
+        </div>
+        <h1 style="text-align: center; font-family: Arial, sans-serif; font-size: 20px;">See More →</h1>
+    </div>
+    <br><br><br>
+
+    <!-- START: Footer Section -->
+    <div class="outer-div">
+        <div class="cities-updates-section">
+            <footer class="site-footer">
+                <div class="footer-top-bar">
+                    <div class="footer-logo">
+                        <img data-src="../Assets/thehindu-logo.svg" class="lazy-img" alt="The Hindu Logo">
+                    </div>
+                    <div class="app-store-buttons">
+                        <a href="#"><img data-src="../Assets/google-playstore-icon.svg" class="lazy-img"
+                                alt="Google Play"></a>
+                        <a href="#"><img data-src="https://www.thehindu.com/theme/images/th-online/apple-store-icon.svg"
+                                class="lazy-img" alt="Apple Store"></a>
+                    </div>
+                </div>
+                <div class="footer-sitemap-grid">
+                    <!-- ... Footer content columns ... -->
+                    <!-- Column 1: The Hindu -->
+                    <div class="sitemap-column">
+                        <h4>The Hindu</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Code of Editorial Values</a></li>
+                            <li><a href="archieve.html">News Archive</a></li>
+                            <li><a href="bookmarks.html">Bookmarks <i class="fa-solid fa-bookmark"></i></a></li>
+                            <li><a href="#">Sitemap</a></li>
+                            <li><a href="#">Print Subscription</a></li>
+                            <li><a href="#">Digital Subscription</a></li>
+                            <li><a href="#">Subscribe to Newsletters</a></li>
+                            <li><a href="#">Rss Feeds</a></li>
+                            <li><a href="#">Readers Editor-Terms of Reference</a></li>
+                            <li><a href="#">Authors & Contributors</a></li>
+                            <li><a href="#">Gift Front page</a></li>
+
+                        </ul>
+                        <h4>Contact us</h4>
+                        <ul>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Social Media</a></li>
+                            <li><a href="#">Advertise With Us</a></li>
+
+                        </ul>
+
+                        <h4>Group News Sites</h4>
+                        <ul>
+                            <li><a href="#">Business Line</a></li>
+                            <li><a href="#">BL on Campus</a></li>
+                            <li><a href="#">Sportstar</a></li>
+                            <li><a href="#">Frontline</a></li>
+                            <li><a href="#">இந்து தமிழ் திசை</a></li>
+                            <li><a href="#">The Hindu Centre</a></li>
+                            <li><a href="#">Young World Club</a></li>
+                            <li><a href="#">The Hindu ePaper</a></li>
+                            <li><a href="#">Business Line ePaper</a></li>
+                            <li><a href="#">Crossword + Free Games</a></li>
+
+                        </ul>
+                    </div>
+
+                    <!-- Column 2: Other Products & Popular Sections -->
+                    <div class="sitemap-column">
+                        <h4>Other Products</h4>
+                        <ul>
+                            <li><a href="#">STEP</a></li>
+                            <li><a href="#">Images</a></li>
+                            <li><a href="#">Classifieds - Print</a></li>
+                            <li><a href="#">Bookstore & Special Publications</a></li>
+
+                        </ul>
+                        <h4>Popular Sections</h4>
+                        <ul>
+                            <li><a href="#">Elections</a></li>
+                            <li><a href="#">Latest News</a></li>
+                            <li><a href="#">National News</a></li>
+                            <li><a href="#">International News</a></li>
+                            <li><a href="#">Videos</a></li>
+                            <li><a href="#">Life & Style</a></li>
+                            <li><a href="#">Foods</a></li>
+                            <li><a href="#">Podcast</a></li>
+                            <li><a href="#">Showcase</a></li>
+
+                        </ul>
+
+                        <h4>Opinion</h4>
+                        <ul>
+                            <li><a href="#">Editorial</a></li>
+                            <li><a href="#">Columns</a></li>
+                            <li><a href="#">Comment</a></li>
+                            <li><a href="#">Cartoon</a></li>
+                            <li><a href="#">Letters</a></li>
+                            <li><a href="#">Interview</a></li>
+                            <li><a href="#">Lead</a></li>
+
+
+                        </ul>
+                    </div>
+
+                    <!-- Column 3: Business, Sport, Sci-Tech -->
+                    <div class="sitemap-column">
+                        <h4>Business</h4>
+                        <ul>
+                            <li><a href="#">Agri-Business</a></li>
+                            <li><a href="#">Industry</a></li>
+                            <li><a href="#">Economy</a></li>
+                            <li><a href="#">Market</a></li>
+                            <li><a href="#">Budget</a></li>
+                            <li><a href="#">
+                                    <div class=""></div>
+                                </a></li>
+
+                        </ul>
+                        <h4>Sport</h4>
+                        <ul>
+                            <li><a href="#">Cricket</a></li>
+                            <li><a href="#">Football</a></li>
+                            <li><a href="#">Hockey</a></li>
+                            <li><a href="#">Tennis</a></li>
+                            <li><a href="#">Athletics</a></li>
+                            <li><a href="#">Motersport</a></li>
+                            <li><a href="#">Races</a></li>
+                            <li><a href="#">Other Sports</a></li>
+                        </ul>
+                        <h4>Sci-Tech</h4>
+                        <ul>
+                            <li><a href="Science.html">Science</a></li>
+                            <li><a href="#">Technology</a></li>
+                            <li><a href="health.html">Health</a></li>
+                            <li><a href="#">Agriculture</a></li>
+                            <li><a href="#">Environment</a></li>
+                            <li><a href="#">Gadgets</a></li>
+                            <li><a href="#">Internet</a></li>
+
+                        </ul>
+                    </div>
+
+                    <!-- Column 4: States & Cities -->
+                    <div class="sitemap-column">
+                        <h4>States</h4>
+                        <ul>
+                            <li><a href="#">Andhra Pradesh</a></li>
+                            <li><a href="#">Karnataka</a></li>
+                            <li><a href="#">Kerala</a></li>
+                            <li><a href="#">Tamil Nadu</a></li>
+                            <li><a href="#">Telangana</a></li>
+                        </ul>
+                        <h4>Cities</h4>
+                        <ul>
+                            <li><a href="#">Bengaluru</a></li>
+                            <li><a href="#">Chennai</a></li>
+                            <li><a href="#">Coimbatore</a></li>
+                            <li><a href="#">Delhi</a></li>
+                            <li><a href="#">Hyderabad</a></li>
+                            <li><a href="#">kochi</a></li>
+                            <li><a href="#">Kolkata</a></li>
+                            <li><a href="#">Kozhikode</a></li>
+                            <li><a href="#">Coimbatore</a></li>
+                            <li><a href="#">Madurai</a></li>
+                            <li><a href="#">Mangaluru</a></li>
+                            <li><a href="#">Mumbai</a></li>
+                            <li><a href="#">Puducherry</a></li>
+                            <li><a href="#">Thiruvananthapuram</a></li>
+                            <li><a href="#">Tiruchirapalli</a></li>
+                            <li><a href="#">Vijayawada</a></li>
+                            <li><a href="#">Visakhapatnam</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 5 & 6: Trending & Latest News -->
+                    <div class="latest-news-grid sitemap-column">
+                        <h4>Trending on The Hindu</h4>
+                        <ul>
+                            <li><a href="#">News <i class="fa-duotone fa-solid fa-arrow-trend-up"
+                                        style="color: red;"></i></a></li>
+                            <li><a href="#">India News <i class="fa-duotone fa-solid fa-arrow-trend-up"
+                                        style="color: red;"></i></a>
+                            </li>
+                            <li><a href="#">Hyderabad News <i class="fa-duotone fa-solid fa-arrow-trend-up"
+                                        style="color: red;"></i></a>
+                            </li>
+                            <li><a href="#">Bengaluru News <i class="fa-duotone fa-solid fa-arrow-trend-up"
+                                        style="color: red;"></i></a>
+                            </li>
+                            <li><a href="#">Sports, IPL 2025 News <i class="fa-duotone fa-solid fa-arrow-trend-up"
+                                        style="color: red;"></i></a></li>
+                            <li><a href="#">Delhi news <i class="fa-duotone fa-solid fa-arrow-trend-up"
+                                        style="color: red;"></i></a>
+                            </li>
+                            <li><a href="#">Live News <i class="fa-duotone fa-solid fa-arrow-trend-up"
+                                        style="color: red;"></i></a></li>
+                            <li><a href="#">Entertainment News <i class="fa-duotone fa-solid fa-arrow-trend-up"
+                                        style="color: red;"></i></a></li>
+                            <li><a href="#">Sitemap <i class="fa-duotone fa-solid fa-arrow-trend-up"
+                                        style="color: red;"></i></a></li>
+                        </ul>
+
+                        <h4>Latest News</h4>
+                        <ul>
+                            <li><a href="#">UN refugee agency says more than 122 million people displaced</a></li>
+                            <li><a href="#">Youth stabbed to death in northeast Delhi</a></li>
+                            <li><a href="#">New menus in Mumbai you should try</a></li>
+                            <li><a href="#">More than 55,000 Palestinians have been killed</a></li>
+                            <li><a href="#">Attempts to resolve stand-off with Anbumani failed: PMK founder Ramadoss</a>
+                            </li>
+                            <li><a href="#">‘DNA’ trailer: Atharvaa, Nimisha Sajayan promise an intense crime
+                                    thriller</a></li>
+                            <li><a href="#">Anatomy of an IPL fan: cricketers, experts and fans examine why the game
+                                    matters to them</a></li>
+                            <li><a href="#">Kerala Civil Police Officer arrested for planting hidden camera in women
+                                    police changing room</a></li>
+                            <li><a href="#">New Tatkal ticket booking rules: How to link Aadhaar to your IRCTC
+                                    account</a></li>
+                            <li><a href="#">iQOO Z10 Lite 5G confirms to use Dimensity processor and Sony camera</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom-bar">
+                    <ul class="social-links">
+                        <li><a href="https://www.whatsapp.com/channel/0029VaAvwQJ90x34WZ6FDg36"><i
+                                    class="fa-brands fa-whatsapp"></i></a></li>
+                        <li><a href="https://x.com/The_Hindu"><i class="fa-brands fa-x-twitter"></i></a></li>
+                        <li><a href="https://www.facebook.com/thehindu"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href="https://www.instagram.com/the_hindu/?ref=badge"><i
+                                    class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="https://www.linkedin.com/school/the-hindu/"><i
+                                    class="fa-brands fa-linkedin"></i></a></li>
+                        <li><a href="https://www.youtube.com/user/The1878Hindu"><i class="fa-brands fa-youtube"></i></a>
+                        </li>
+                        <li><a href="https://open.spotify.com/show/5yESTCj0iikA81EP3uXkQC"><i
+                                    class="fa-brands fa-spotify"></i></a></li>
+                        <li><a href="https://t.me/THnewsupdates"><i class="fa-brands fa-telegram"></i></a></li>
+                    </ul>
+                    <div class="legal-links">
+                        <a href="#">TERMS OF USE</a> /
+                        <a href="#">PRIVACY POLICY</a>
+                    </div>
+                    <div class="copyright-bar">
+                        <span>Copyright© 2025, THG PUBLISHING PVT LTD. or its affiliated companies. All rights
+                            reserved.</span>
+                        <a href="#" id="backToTopBtn">BACK TO TOP ↑</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WaterHarvesting</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            height: 60px;
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            border-bottom: 1px solid #e0e0e0;
+
+        }
+
+        .nav-left,
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            font-size: 14px;
+        }
+
+        .logo .lazy-img {
+            height: 100px;
+            width: 350px;
+        }
+
+        .subscribe-button {
+            background-color: #b91c1c;
+
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            cursor: pointer;
+
+            font-weight: bold;
+        }
+
+
+        .nav {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #888;
+            word-spacing: 5px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #888;
+        }
+
+        .nav .active {
+            color: #d32f2f;
+            font-weight: bold;
+        }
+
+
+        article {
+            margin-top: 20px;
+        }
+
+
+        .article-headline {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 42px;
+            font-weight: bold;
+            margin: 10px 0;
+            line-height: 1.2;
+
+        }
+
+        .premium-tag {
+            background-color: #ffc20e;
+
+            color: #000;
+            padding: 4px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 4px;
+
+            vertical-align: middle;
+
+            margin-left: 10px;
+        }
+
+
+        .meta-info {
+            font-size: 14px;
+            color: #555;
+            margin-top: 15px;
+        }
+
+        .author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .author img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+
+        }
+
+        .author-name {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+        }
+
+
+        .article-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .action-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        /* main image part */
+        .main-image-container {
+            margin-top: 20px;
+        }
+
+        .main-image-container img {
+            width: 100%;
+            height: auto;
+
+        }
+
+        .image-caption {
+            font-size: 14px;
+            color: #666;
+            margin-top: 10px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+
+        .article-body {
+            margin-top: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 18px;
+            line-height: 1.7;
+
+        }
+
+
+        /* 2 part */
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+
+            padding: 0 15px;
+        }
+
+
+        .section-heading {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 28px;
+            font-weight: normal;
+            color: #b91c1c;
+            /* A dark red color */
+            text-align: center;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 2.2fr 1fr;
+
+            gap: 30px;
+
+        }
+
+
+        .article {
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+
+        .article:last-child {
+            border-bottom: none;
+
+        }
+
+        .article-title {
+            font-family: 'Georgia', serif;
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+            line-height: 1.4;
+            margin: 5px 0;
+        }
+
+        .article-author {
+            font-size: 11px;
+            font-weight: bold;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+
+        .premium-section h3 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 24px;
+            font-weight: normal;
+            color: #b91c1c;
+            margin-bottom: 20px;
+        }
+
+        .category-title {
+            font-size: 12px;
+            font-weight: bold;
+            color: #b91c1c;
+            text-transform: uppercase;
+        }
+
+        .article-with-image {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+
+        }
+
+        .article-with-image .text-content {
+            flex: 1;
+
+        }
+
+        .article-with-image img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+
+        .main-story .live-indicator {
+            color: red;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .main-story .live-indicator::before {
+            content: '●';
+            margin-right: 5px;
+        }
+
+        .main-story-headline {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 36px;
+            line-height: 1.2;
+            margin: 10px 0;
+        }
+
+        .main-story-summary {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 15px;
+        }
+
+        .main-story img {
+            width: 100%;
+            margin-top: 15px;
+        }
+
+
+        .sub-articles {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .sub-articles .article img {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .sub-articles .article {
+            border: none;
+
+        }
+
+
+        .latest-news-section h3 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 24px;
+            font-weight: normal;
+            color: #b91c1c;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+
+
+        .timeline {
+            list-style: none;
+            padding-left: 20px;
+            position: relative;
+
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            bottom: 5px;
+            width: 2px;
+            background-color: #ddd;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -24px;
+            top: 5px;
+            width: 9px;
+            height: 9px;
+            background: white;
+            border: 2px solid #555;
+            border-radius: 50%;
+        }
+
+        .timeline-item .timestamp {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .timeline-item .headline {
+            font-size: 15px;
+            line-height: 1.4;
+            margin-top: 5px;
+        }
+
+        .read-more-link {
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 2px;
+        }
+
+
+
+        /* Footer ka css */
+
+        .site-footer {
+            background-color: #f7f7f7;
+            padding: 40px 5%;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer-top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .footer-logo img {
+            max-height: 40px;
+        }
+
+        .app-store-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .app-store-buttons img {
+            height: 40px;
+        }
+
+        .footer-sitemap-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 30px;
+        }
+
+        .sitemap-column h4 {
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin: 0 0 20px 0;
+            padding-top: 15px;
+            border-top: 2px solid #333;
+        }
+
+        .sitemap-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 40px 0;
+        }
+
+        .sitemap-column li {
+            margin-bottom: 12px;
+        }
+
+        .sitemap-column a {
+            text-decoration: none;
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        .sitemap-column a:hover {
+            text-decoration: underline;
+        }
+
+        .latest-news-grid {
+            grid-column: span 2;
+        }
+
+        .latest-news-grid ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .latest-news-grid li {
+            font-size: 0.85rem;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 15px;
+        }
+
+        .footer-bottom-bar {
+            border-top: 1px solid #e0e0e0;
+            padding-top: 30px;
+            margin-top: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: left;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+
+        .social-links a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 35px;
+            height: 35px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .legal-links {
+            text-align: left;
+            margin-bottom: 20px;
+            font-size: 0.8rem;
+        }
+
+        .legal-links a {
+            color: #555;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .copyright-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #555;
+        }
+
+        #backToTopBtn {
+            color: #555;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <div class="nav-left">
+                <span>☰</span>
+                <span><i class="fa-solid fa-magnifying-glass"></i> Search</span>
+            </div>
+
+            <div class="logo">
+                <img src="../Assets/thehindu-logo.svg" class="lazy-img" alt="THE HINDU Logo" />
+            </div>
+
+
+            <div class="nav-right">
+                <button class="subscribe-button">SUBSCRIBE</button>
+                <span><i class="fa-solid fa-user"></i> LOGIN</span>
+            </div>
+        </header>
+
+
+        <main>
+            <!-- Navigation part-->
+            <div class="nav">
+                <a href="../Codes/index.html">HOME</a> /
+                <a href="#">NEWS</a> /
+                <a href="../Codes/india.html">INDIA</a> /
+                <span class="active">RAJASTHAN</span>
+            </div>
+
+            <!-- Article heading -->
+            <article>
+
+                <h1 class="article-headline">
+                    A new water harvesting model promises to help Rajasthan's farmers
+                    <span class="premium-tag">TH Premium</span>
+                </h1>
+
+
+                <p class="meta-info">
+                    Updated - June 10, 2023 05:30 am IST
+                </p>
+
+
+                <div class="article-actions">
+
+                    <div class="author">
+
+                        <img src="../Assets/iqbal.jpeg" alt="Author Mohammed Iqbal">
+                        <span class="author-name">MOHAMMED IQBAL</span>
+                    </div>
+
+                    <div class="action-item" style="gap: 15px;">
+                        <div class="action-item">
+                            <span><i class="fa-solid fa-print"></i> PRINT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article Image -->
+                <div class="main-image-container">
+                    <img src="../Assets/kukas_pond_3.jpg"
+                        alt="An aerial view of a farm pond in Jaipur's Kukas village.">
+                </div>
+
+                <!-- Image Caption -->
+                <p class="image-caption">
+                    File photo of saplings of Ferula assa-foetida grown by CSIR-IHBT scientists. | Photo Credit: Special
+                    arrangement
+                </p>
+
+                <!-- Article content -->
+                <div class="article-body">
+                    <p>
+
+                        Heeng or asafoetida (Ferula assa-foetida) is an essential ingredient in many Indian cuisines. A
+                        pinch of heeng is typically added to hot oil before other constituents when cooking. Despite the
+                        great diversity of India’s cuisines, most of them have recipes with heeng.
+                    </p>
+                    <p>
+                        There are mentions of heeng in ancient Indian texts including the Mahabharata and texts of
+                        Ayurveda. The latter recommends using heeng to refresh one’s senses, including consciousness.
+                        The Charaka Sanhita Sutrasthana 27/299 says heeng can help relieve abdominal pain, digest
+                        undigested food, and enhance taste. The Pippalada Samhita and the works of Panini also include
+                        heeng.
+
+
+                    </p>
+                </div>
+
+            </article>
+        </main>
+
+    </div>
+
+
+
+
+    <br>
+    <br>
+    <br>
+
+
+    <!-- article ka 2nd part -->
+
+    <div class="container">
+        <h2 class="section-heading">Top News Today</h2>
+
+        <main class="main-grid">
+
+            <!-- top news ka left column -->
+            <section class="premium-section">
+                <h3>Premium</h3>
+
+                <article class="article">
+                    <p class="category-title">Videos</p>
+                    <h4 class="article-title">Watch: Ahmedabad plane crash: What we know so far</h4>
+                    <p class="article-author">The Hindu Bureau</p>
+                </article>
+
+                <article class="article">
+                    <h4 class="article-title">World Day Against Child Labour: Recounting Velpur's story in ending child
+                        labour</h4>
+                    <p class="article-author">Asok Kumar G.</p>
+                </article>
+
+                <article class="article article-with-image">
+                    <div class="text-content">
+                        <h4 class="article-title">Hindi can be taught with English, mother tongue: Naidu</h4>
+                        <p class="article-author">Varghese K. George</p>
+                    </div>
+                </article>
+
+                <article class="article">
+                    <p class="category-title">India</p>
+                    <h4 class="article-title">Boeing 787 Dreamliner and its history of failures | Explained</h4>
+                </article>
+
+            </section>
+
+            <!-- top news ka center column -->
+            <section class="main-story">
+
+                <p class="live-indicator">LIVE</p>
+                <h1 class="main-story-headline">Ahmedabad flight crash: Death toll to be released after DNA tests and
+                    all bodies identified, says Amit Shah</h1>
+                <p class="main-story-summary">
+                    London-bound jet crashes into residential area; pilot issues 'Mayday' alert soon after take-off,
+                    goes silent before the crash; former Gujarat Chief Minister Vijay Rupani among the victims; one
+                    passenger survives miraculously; he was identified as a British national; several casualties feared
+                    on the ground with official count of those killed awaited
+                </p>
+                <p class="article-author">THE HINDU BUREAU</p>
+
+                <img src="../Assets/plain-crash.jpg" alt="Wreckage of a plane crash in a residential area.">
+
+                <div class="sub-articles">
+                    <article class="article">
+                        <h4 class="article-title">Vijay Rupani, ex Gujarat CM, killed in Ahmedabad plane crash</h4>
+                    </article>
+                    <article class="article">
+                        <h4 class="article-title">Ahmedabad air crash: 'We could not determine if the victims were
+                            children or adults'</h4>
+                        <p class="article-author">VAIJITA SINGH</p>
+                    </article>
+                </div>
+
+            </section>
+
+            <!-- top news ka right column -->
+            <aside class="latest-news-section">
+                <h3>Latest News</h3>
+
+                <ul class="timeline">
+                    <li class="timeline-item">
+                        <p class="timestamp">40 mins ago - World</p>
+                        <p class="headline">China says approved 'certain number' of rare-earth export licences</p>
+                    </li>
+                    <li class="timeline-item">
+                        <p class="timestamp">49 mins ago - World</p>
+                        <p class="headline">Hamas says it killed 12 'Israeli-backed fighters'; Israeli-supported group
+                            says they were aid workers</p>
+                    </li>
+                    <li class="timeline-item">
+                        <p class="timestamp">1 hour ago - World</p>
+                        <p class="headline">UN nuclear watchdog board censures Iran, which retaliates by announcing a
+                            new enrichment site</p>
+                    </li>
+                    <li class="timeline-item">
+                        <p class="timestamp">1 hour ago - India</p>
+                        <p class="headline">NIA searches 15 locations in Punjab, Haryana in Babbar Khalsa-linked grenade
+                            attack case</p>
+                    </li>
+                    <li class="timeline-item">
+                        <p class="timestamp">1 hour ago - India</p>
+                        <p class="headline">Modi-Carney meeting on G7 sidelines to focus on bilateral reset: MEA</p>
+                    </li>
+                </ul>
+
+                <a href="#" class="read-more-link">Read More Stories</a>
+
+            </aside>
+
+        </main>
+    </div>
+
+
+    <!-- footer wala section -->
+    <div class="outer-div">
+        <div class="cities-updates-section">
+            <footer class="site-footer">
+                <div class="footer-top-bar">
+                    <div class="footer-logo">
+                        <img src="../Assets/thehindu-logo.svg" class="lazy-img" alt="The Hindu Logo">
+                    </div>
+                    <div class="app-store-buttons">
+                        <a href="#"><img src="../Assets/google-playstore-icon.svg" class="lazy-img"
+                                alt="Google Play"></a>
+                        <a href="#"><img src="https://www.thehindu.com/theme/images/th-online/apple-store-icon.svg"
+                                class="lazy-img" alt="Apple Store"></a>
+                    </div>
+                </div>
+                <div class="footer-sitemap-grid">
+
+
+                    <div class="sitemap-column">
+                        <h4>The Hindu</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Code of Editorial Values</a></li>
+                            <li><a href="#">News Archive</a></li>
+                            <li><a href="bookmarks.html">Bookmarks <i class="fa-solid fa-bookmark"></i></a></li>
+                            <li><a href="#">Sitemap</a></li>
+                            <li><a href="#">Print Subscription</a></li>
+                            <li><a href="#">Digital Subscription</a></li>
+                            <li><a href="#">Subscribe to Newsletters</a></li>
+                            <li><a href="#">Rss Feeds</a></li>
+                            <li><a href="#">Readers Editor-Terms of Reference</a></li>
+                            <li><a href="#">Authors & Contributors</a></li>
+                            <li><a href="#">Gift Front page</a></li>
+
+                        </ul>
+                        <h4>Contact us</h4>
+                        <ul>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Social Media</a></li>
+                            <li><a href="#">Advertise With Us</a></li>
+
+                        </ul>
+
+                        <h4>Group News Sites</h4>
+                        <ul>
+                            <li><a href="#">Business Line</a></li>
+                            <li><a href="#">BL on Campus</a></li>
+                            <li><a href="#">Sportstar</a></li>
+                            <li><a href="#">Frontline</a></li>
+                            <li><a href="#">இந்து தமிழ் திசை</a></li>
+                            <li><a href="#">The Hindu Centre</a></li>
+                            <li><a href="#">Young World Club</a></li>
+                            <li><a href="#">The Hindu ePaper</a></li>
+                            <li><a href="#">Business Line ePaper</a></li>
+                            <li><a href="#">Crossword + Free Games</a></li>
+
+                        </ul>
+                    </div>
+
+
+                    <div class="sitemap-column">
+                        <h4>Other Products</h4>
+                        <ul>
+                            <li><a href="#">STEP</a></li>
+                            <li><a href="#">Images</a></li>
+                            <li><a href="#">Classifieds - Print</a></li>
+                            <li><a href="#">Bookstore & Special Publications</a></li>
+
+                        </ul>
+                        <h4>Popular Sections</h4>
+                        <ul>
+                            <li><a href="#">Elections</a></li>
+                            <li><a href="#">Latest News</a></li>
+                            <li><a href="#">National News</a></li>
+                            <li><a href="#">International News</a></li>
+                            <li><a href="#">Videos</a></li>
+                            <li><a href="#">Life & Style</a></li>
+                            <li><a href="#">Foods</a></li>
+                            <li><a href="#">Podcast</a></li>
+                            <li><a href="#">Showcase</a></li>
+
+                        </ul>
+
+                        <h4>Opinion</h4>
+                        <ul>
+                            <li><a href="#">Editorial</a></li>
+                            <li><a href="#">Columns</a></li>
+                            <li><a href="#">Comment</a></li>
+                            <li><a href="#">Cartoon</a></li>
+                            <li><a href="#">Letters</a></li>
+                            <li><a href="#">Interview</a></li>
+                            <li><a href="#">Lead</a></li>
+
+
+                        </ul>
+                    </div>
+
+
+                    <div class="sitemap-column">
+                        <h4>Business</h4>
+                        <ul>
+                            <li><a href="#">Agri-Business</a></li>
+                            <li><a href="#">Industry</a></li>
+                            <li><a href="#">Economy</a></li>
+                            <li><a href="#">Market</a></li>
+                            <li><a href="#">Budget</a></li>
+                            <li><a href="#">
+                                    <div class=""></div>
+                                </a></li>
+
+                        </ul>
+                        <h4>Sport</h4>
+                        <ul>
+                            <li><a href="#">Cricket</a></li>
+                            <li><a href="#">Football</a></li>
+                            <li><a href="#">Hockey</a></li>
+                            <li><a href="#">Tennis</a></li>
+                            <li><a href="#">Athletics</a></li>
+                            <li><a href="#">Motersport</a></li>
+                            <li><a href="#">Races</a></li>
+                            <li><a href="#">Other Sports</a></li>
+                        </ul>
+                        <h4>Sci-Tech</h4>
+                        <ul>
+                            <li><a href="#">Science</a></li>
+                            <li><a href="#">Technology</a></li>
+                            <li><a href="#">Health</a></li>
+                            <li><a href="#">Agriculture</a></li>
+                            <li><a href="#">Environment</a></li>
+                            <li><a href="#">Gadgets</a></li>
+                            <li><a href="#">Internet</a></li>
+
+                        </ul>
+                    </div>
+
+
+                    <div class="sitemap-column">
+                        <h4>States</h4>
+                        <ul>
+                            <li><a href="#">Andhra Pradesh</a></li>
+                            <li><a href="#">Karnataka</a></li>
+                            <li><a href="#">Kerala</a></li>
+                            <li><a href="#">Tamil Nadu</a></li>
+                            <li><a href="#">Telangana</a></li>
+                        </ul>
+                        <h4>Cities</h4>
+                        <ul>
+                            <li><a href="#">Bengaluru</a></li>
+                            <li><a href="#">Chennai</a></li>
+                            <li><a href="#">Coimbatore</a></li>
+                            <li><a href="#">Delhi</a></li>
+                            <li><a href="#">Hyderabad</a></li>
+                            <li><a href="#">kochi</a></li>
+                            <li><a href="#">Kolkata</a></li>
+                            <li><a href="#">Kozhikode</a></li>
+                            <li><a href="#">Coimbatore</a></li>
+                            <li><a href="#">Madurai</a></li>
+                            <li><a href="#">Mangaluru</a></li>
+                            <li><a href="#">Mumbai</a></li>
+                            <li><a href="#">Puducherry</a></li>
+                            <li><a href="#">Thiruvananthapuram</a></li>
+                            <li><a href="#">Tiruchirapalli</a></li>
+                            <li><a href="#">Vijayawada</a></li>
+                            <li><a href="#">Visakhapatnam</a></li>
+                        </ul>
+                    </div>
+
+
+                    <div class="latest-news-grid sitemap-column">
+                        <h4>Trending on The Hindu</h4>
+                        <ul>
+                            <li><a href="#">News <i class="fa-duotone fa-solid fa-arrow-trend-up" style="color: red;"></i></a></li>
+                            <li><a href="#">India News <i class="fa-duotone fa-solid fa-arrow-trend-up" style="color: red;"></i></a>
+                            </li>
+                            <li><a href="#">Hyderabad News <i class="fa-duotone fa-solid fa-arrow-trend-up" style="color: red;"></i></a>
+                            </li>
+                            <li><a href="#">Bengaluru News <i class="fa-duotone fa-solid fa-arrow-trend-up" style="color: red;"></i></a>
+                            </li>
+                            <li><a href="#">Sports, IPL 2025 News <i
+                                        class="fa-duotone fa-solid fa-arrow-trend-up" style="color: red;"></i></a></li>
+                            <li><a href="#">Delhi news <i class="fa-duotone fa-solid fa-arrow-trend-up" style="color: red;"></i></a>
+                            </li>
+                            <li><a href="#">Live News <i class="fa-duotone fa-solid fa-arrow-trend-up" style="color: red;"></i></a></li>
+                            <li><a href="#">Entertainment News <i
+                                        class="fa-duotone fa-solid fa-arrow-trend-up" style="color: red;"></i></a></li>
+                            <li><a href="#">Sitemap <i class="fa-duotone fa-solid fa-arrow-trend-up" style="color: red;"></i></a></li>
+                        </ul>
+
+                        <h4>Latest News</h4>
+                        <ul>
+                            <li><a href="#">UN refugee agency says more than 122 million people displaced</a></li>
+                            <li><a href="#">Youth stabbed to death in northeast Delhi</a></li>
+                            <li><a href="#">New menus in Mumbai you should try</a></li>
+                            <li><a href="#">More than 55,000 Palestinians have been killed</a></li>
+                            <li><a href="#">Attempts to resolve stand-off with Anbumani failed: PMK founder Ramadoss</a>
+                            </li>
+                            <li><a href="#">‘DNA’ trailer: Atharvaa, Nimisha Sajayan promise an intense crime
+                                    thriller</a></li>
+                            <li><a href="#">Anatomy of an IPL fan: cricketers, experts and fans examine why the game
+                                    matters to them</a></li>
+                            <li><a href="#">Kerala Civil Police Officer arrested for planting hidden camera in women
+                                    police changing room</a></li>
+                            <li><a href="#">New Tatkal ticket booking rules: How to link Aadhaar to your IRCTC
+                                    account</a></li>
+                            <li><a href="#">iQOO Z10 Lite 5G confirms to use Dimensity processor and Sony camera</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom-bar">
+                    <ul class="social-links">
+                        <li><a href="https://www.whatsapp.com/channel/0029VaAvwQJ90x34WZ6FDg36"><i
+                                    class="fa-brands fa-whatsapp"></i></a></li>
+                        <li><a href="https://x.com/The_Hindu"><i class="fa-brands fa-x-twitter"></i></a></li>
+                        <li><a href="https://www.facebook.com/thehindu"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href="https://www.instagram.com/the_hindu/?ref=badge"><i
+                                    class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="https://www.linkedin.com/school/the-hindu/"><i
+                                    class="fa-brands fa-linkedin"></i></a></li>
+                        <li><a href="https://www.youtube.com/user/The1878Hindu"><i class="fa-brands fa-youtube"></i></a>
+                        </li>
+                        <li><a href="https://open.spotify.com/show/5yESTCj0iikA81EP3uXkQC"><i
+                                    class="fa-brands fa-spotify"></i></a></li>
+                        <li><a href="https://t.me/THnewsupdates"><i class="fa-brands fa-telegram"></i></a></li>
+                    </ul>
+                    <div class="legal-links">
+                        <a href="#">TERMS OF USE</a> /
+                        <a href="#">PRIVACY POLICY</a>
+                    </div>
+                    <div class="copyright-bar">
+                        <span>Copyright© 2025, THG PUBLISHING PVT LTD. or its affiliated companies. All rights
+                            reserved.</span>
+                        <a href="#" id="backToTopBtn">BACK TO TOP ↑</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookmarks - The Hindu</title>
+    <!-- Link to the same CSS and Font Awesome for consistent styling -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+<body>
+
+    <div class="container">
+        <!-- A simple header for the bookmarks page -->
+        <header class="main-header" style="height: auto; text-align: center; padding: 20px 0;">
+            <a href="index.html">
+                <img src="../Assets/thehindu-logo.svg" alt="THE HINDU Logo" style="max-width: 300px;" />
+            </a>
+        </header>
+
+        <main class="bookmarks-main-content">
+            <h1 style="text-align: center; border-bottom: 2px solid #e0e0e0; padding-bottom: 20px;">Bookmarked Articles</h1>
+            
+            <!-- Bookmarked articles will be inserted here by JavaScript -->
+            <div id="bookmarks-list">
+                <!-- This area will be populated automatically -->
+            </div>
+        </main>
+    </div> <!-- End of container -->
+
+    <style>
+        /* Specific styles for the bookmarks page */
+        .bookmarks-main-content {
+            padding: 20px 0;
+            min-height: 60vh;
+        }
+        #bookmarks-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .bookmark-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+            border-radius: 4px;
+        }
+        .bookmark-item h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            flex-grow: 1; /* Allow title to take up space */
+        }
+        .bookmark-item a:hover {
+            text-decoration: underline;
+        }
+        .remove-bookmark-btn {
+            background-color: #d9232d;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-left: 20px; /* Add space between title and button */
+            flex-shrink: 0; /* Prevent button from shrinking */
+        }
+
+        /* Dark theme adjustments for this page */
+        body.dark-theme .bookmark-item {
+            background-color: #2a2a2a;
+            border-color: #444;
+        }
+        body.dark-theme .bookmark-item h3 a {
+            color: #e0e0e0;
+        }
+    </style>
+
+    <!-- JavaScript to load bookmarks -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Apply saved theme on load (copied from your script.js)
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+            } else {
+                document.body.classList.remove('dark-theme');
+            }
+            
+            const bookmarksList = document.getElementById('bookmarks-list');
+            let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
+
+            function displayBookmarks() {
+                bookmarksList.innerHTML = ''; // Clear the list first
+
+                if (bookmarks.length === 0) {
+                    bookmarksList.innerHTML = '<p style="text-align: center;">You have no saved articles. Go back to the homepage to add some!</p>';
+                    return;
+                }
+
+                bookmarks.forEach(bookmark => {
+                    const article = document.createElement('article');
+                    article.className = 'bookmark-item';
+                    article.innerHTML = `
+                        <h3><a href="${bookmark.link}" target="_blank">${bookmark.title}</a></h3>
+                        <button class="remove-bookmark-btn" data-id="${bookmark.id}">Remove</button>
+                    `;
+                    bookmarksList.appendChild(article);
+                });
+            }
+
+            // Event listener for the "Remove" button (uses event delegation)
+            bookmarksList.addEventListener('click', (event) => {
+                // Check if a remove button was clicked
+                if (event.target.classList.contains('remove-bookmark-btn')) {
+                    const articleIdToRemove = event.target.getAttribute('data-id');
+                    
+                    // Remove the bookmark from our array
+                    bookmarks = bookmarks.filter(b => b.id !== articleIdToRemove);
+                    
+                    // Save the updated array back to localStorage
+                    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+                    
+                    // Re-display the bookmarks to reflect the change
+                    displayBookmarks();
+                }
+            });
+
+            // Initial display of bookmarks when the page loads
+            displayBookmarks();
+        });
+    </script>
+</body>
+</html>

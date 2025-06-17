@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Archive - The Hindu</title>
+    <!-- Hum main CSS file istemal kar rahe hain taaki is page ka look bhi same rahe -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Is page ke liye kuch khaas aasan styles */
+        body {
+            background-color: #f9f9f9;
+        }
+
+        .archive-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+        }
+
+        .archive-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .archive-header h1 {
+            color: #a80000;
+            margin: 0;
+        }
+
+        .archive-item {
+            border-bottom: 1px solid #f0f0f0;
+            padding: 15px 0;
+        }
+
+        .archive-item:last-child {
+            border-bottom: none;
+        }
+
+        .archive-item a {
+            font-family: 'Lora', serif;
+            font-size: 1.2rem;
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .archive-item a:hover {
+            color: #d9232d;
+        }
+
+        .read-date {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .empty-message {
+            text-align: center;
+            padding: 50px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        #clear-archive-btn {
+            background-color: #d9232d;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #0077cc;
+            text-decoration: none;
+        }
+        
+        /* Dark mode ke liye styles */
+        body.dark-theme {
+             background-color: #121212;
+        }
+        body.dark-theme .archive-container {
+            background-color: #1e1e1e;
+        }
+        body.dark-theme .archive-item a,
+        body.dark-theme .back-link,
+        body.dark-theme .empty-message {
+             color: #e0e0e0;
+        }
+         body.dark-theme .read-date {
+             color: #999;
+         }
+         body.dark-theme .archive-item a:hover {
+            color: #ff5c5c;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="archive-container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+        <div class="archive-header">
+            <h1>News Archive</h1>
+            <button id="clear-archive-btn">Clear History</button>
+        </div>
+
+        <div id="archive-list">
+            <!-- Saved articles yahan JavaScript ke through aayenge -->
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Function jo theme (dark/light) check karke apply karti hai
+        const applyThemeOnLoad = () => {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+            } else {
+                document.body.classList.remove('dark-theme');
+            }
+        };
+        applyThemeOnLoad();
+
+        const archiveList = document.getElementById('archive-list');
+        const clearArchiveBtn = document.getElementById('clear-archive-btn');
+
+        // Local storage se save kiye gaye articles ko load karo
+        let newsArchive = JSON.parse(localStorage.getItem('newsArchive')) || [];
+
+        // Function jo archive list ko screen par dikhati hai
+        const displayArchive = () => {
+            archiveList.innerHTML = ''; // Pehle list ko khali karo
+
+            if (newsArchive.length === 0) {
+                archiveList.innerHTML = `<p class="empty-message">Your reading archive is empty. Start reading articles on the main page to add them here!</p>`;
+                return;
+            }
+
+            // Archive ko ulta (reverse) display karo taaki sabse naya article upar aaye
+            newsArchive.slice().reverse().forEach(item => {
+                const articleElement = document.createElement('div');
+                articleElement.className = 'archive-item';
+                
+                const readDate = new Date(item.readDate).toLocaleString('en-US', {
+                    year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'
+                });
+
+                articleElement.innerHTML = `
+                    <a href="${item.link}" target="_blank">${item.title}</a>
+                    <p class="read-date">Read on: ${readDate}</p>
+                `;
+
+                archiveList.appendChild(articleElement);
+            });
+        };
+
+        // Clear History button ka kaam
+        clearArchiveBtn.addEventListener('click', () => {
+            if (confirm('Are you sure you want to delete your entire reading history? This cannot be undone.')) {
+                // local storage se data delete karo
+                localStorage.removeItem('newsArchive');
+                // newsArchive array ko khali karo
+                newsArchive = [];
+                // Screen par display update karo
+                displayArchive();
+            }
+        });
+        
+        // Page load hone par archive display karo
+        displayArchive();
+    });
+    </script>
+</body>
+</html>

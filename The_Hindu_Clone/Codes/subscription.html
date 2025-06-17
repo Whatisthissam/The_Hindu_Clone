@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Plans</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: white;
+            color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .steps {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+            gap: 30px;
+        }
+
+        .step {
+            padding: 20px;
+            background-color: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 200px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .step-number {
+            background: #1a1a1a;
+            color: #ffffff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .step h3 {
+            margin-bottom: 10px;
+            color: #111111;
+        }
+
+        .step p {
+            margin-bottom: 10px;
+            color: #555555;
+        }
+
+        .plans-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .plan-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            width: 300px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            border-color: #d0d0d0;
+        }
+
+        .plan-card.popular::before {
+            content: "MOST POPULAR";
+            position: absolute;
+            top: 15px;
+            right: -35px;
+            background: #ff6b6b;
+            color: #ffffff;
+            padding: 5px 35px;
+            transform: rotate(45deg);
+            font-size: 12px;
+            font-weight: bold;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        .plan-header {
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 20px;
+        }
+
+
+        .plan-header p {
+            color:  #000000;
+           
+        }
+
+        .plan-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .plan-price {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #000000;
+        }
+
+        .price-period {
+            font-size: 1rem;
+            color: #555555;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 30px;
+            padding-left: 0;
+        }
+
+        .plan-features li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #333333;
+            font-size: 0.95rem;
+        }
+
+        .feature-icon {
+            color: #4ecdc4;
+            min-width: 20px;
+        }
+
+        .plan-button {
+            background: linear-gradient(90deg, #ff6b6b, #ff8e53);
+            color: white;
+            border: none;
+            padding: 14px;
+            width: 100%;
+            border-radius: 6px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .plan-button:hover {
+            transform: scale(1.04);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .corporate-benefits {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 50px 0;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .corporate-benefits h2 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .benefit-card {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            gap: 15px;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.07);
+        }
+
+        .benefit-icon {
+            font-size: 1.8rem;
+            color: #ff6b6b;
+            flex-shrink: 0;
+        }
+
+        .benefit-content h3 {
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .benefit-content p {
+            color: #555555;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="../Assets/thehindu-logo.svg" class="lazy-img" alt="THE HINDU Logo" height="100px"
+                    width="400px" />
+            </div>
+        </header>
+
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Choose Plan</h3>
+                <p>Select the subscription that fits your needs</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Create Account</h3>
+                <p>Register with your email address</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Enjoy Premium</h3>
+                <p>Access exclusive content immediately</p>
+            </div>
+        </div>
+
+        <div class="plans-container">
+            <div class="plan-card">
+                <div class="plan-header">
+                    <h2 class="plan-name">Individual</h2>
+                    <div class="plan-price">₹120<span class="price-period">/month</span></div>
+                    <p>Perfect for personal use</p>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check feature-icon"></i> Unlimited articles access</li>
+                    <li><i class="fas fa-check feature-icon"></i> Ad-free experience</li>
+                    <li><i class="fas fa-check feature-icon"></i> Daily e-paper</li>
+                    <li><i class="fas fa-check feature-icon"></i> Archive access (3 years)</li>
+                    <li><i class="fas fa-check feature-icon"></i> Customizable news feed</li>
+                </ul>
+                <button class="plan-button">Get Started</button>
+            </div>
+
+            <div class="plan-card popular">
+                <div class="plan-header">
+                    <h2 class="plan-name">Corporate</h2>
+                    <div class="plan-price">₹5,000<span class="price-period">/year</span></div>
+                    <p>For teams and businesses</p>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check feature-icon"></i> Everything in Individual</li>
+                    <li><i class="fas fa-check feature-icon"></i> Up to 10 user licenses</li>
+                    <li><i class="fas fa-check feature-icon"></i> Team management dashboard</li>
+                    <li><i class="fas fa-check feature-icon"></i> Customized newsletters</li>
+                    <li><i class="fas fa-check feature-icon"></i> Premium research reports</li>
+                    <li><i class="fas fa-check feature-icon"></i> Dedicated account manager</li>
+                </ul>
+                <button class="plan-button">Choose Corporate</button>
+            </div>
+
+            <div class="plan-card">
+                <div class="plan-header">
+                    <h2 class="plan-name">Institutional</h2>
+                    <div class="plan-price">₹15,000<span class="price-period">/year</span></div>
+                    <p>For universities & libraries</p>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check feature-icon"></i> Everything in Corporate</li>
+                    <li><i class="fas fa-check feature-icon"></i> Unlimited user access</li>
+                    <li><i class="fas fa-check feature-icon"></i> Full historical archive</li>
+                    <li><i class="fas fa-check feature-icon"></i> Research API access</li>
+                    <li><i class="fas fa-check feature-icon"></i> Bulk content downloads</li>
+                    <li><i class="fas fa-check feature-icon"></i> Dedicated support team</li>
+                </ul>
+                <button class="plan-button">Choose Institutional</button>
+            </div>
+        </div>
+
+        <div class="corporate-benefits">
+            <h2><i class="fas fa-crown"></i> Corporate Membership Benefits</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-briefcase"></i></div>
+                    <div class="benefit-content">
+                        <h3>Early Access</h3>
+                        <p>Get exclusive articles and market analysis 24 hours before public release</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="benefit-content">
+                        <h3>Premium Reports</h3>
+                        <p>Access to in-depth industry reports and economic forecasts</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-user-tie"></i></div>
+                    <div class="benefit-content">
+                        <h3>Executive Briefings</h3>
+                        <p>Weekly curated briefings for leadership teams</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-file-download"></i></div>
+                    <div class="benefit-content">
+                        <h3>Content Sharing</h3>
+                        <p>Easily share articles with internal teams and clients</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
